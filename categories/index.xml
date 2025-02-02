@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on DSStudent</title>
-    <link>https://DSStudent.xyz/categories/</link>
+    <link>https://matutedevelop.github.io/blogg/categories/</link>
     <description>Recent Posts in Categories on DSStudent</description>
     <generator>Hugo 0.142.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Feb 2025 12:20:23 -0600</lastBuildDate>
-    <atom:link href="https://DSStudent.xyz/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Feb 2025 15:04:04 -0600</lastBuildDate>
+    <atom:link href="https://matutedevelop.github.io/blogg/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
