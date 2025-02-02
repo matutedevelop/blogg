@@ -6,7 +6,15 @@
     <description>Recent Posts on DSStudent</description>
     <generator>Hugo 0.142.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Feb 2025 00:26:04 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 02 Feb 2025 00:27:53 -0600</lastBuildDate>
     <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>test 1</title>
+      <link>https://example.org/este-es-un-test-mamalon-que-esta-todo-chido/</link>
+      <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/este-es-un-test-mamalon-que-esta-todo-chido/</guid>
+      <description></description>
+      
+    </item>
   </channel>
 </rss>
