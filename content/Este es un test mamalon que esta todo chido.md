@@ -16,5 +16,5 @@ $$\texttt{hola solo espero que essto funcione}$$
 
 
 
-!![Image Description](static/images/Pasted%20image%2020250201173433.png)
-!![Image Description](static/images/Pasted%20image%2020250202003149.png)
+!![Image Description](/images/Pasted%20image%2020250201173433.png)
+!![Image Description](/images/Pasted%20image%2020250202003149.png)
