@@ -3,7 +3,7 @@ import re
 import shutil
 
 # Paths (using raw strings to handle Windows backslashes correctly)
-posts_dir = r"D:\blogg\blogg\content"
+posts_dir = r"D:\blogg\blogg\content\posts"
 attachments_dir = r"C:\Users\fofoy\OneDrive - ITESO\notest\09-media"
 static_images_dir = r"D:\blogg\blogg\static\images"
 
