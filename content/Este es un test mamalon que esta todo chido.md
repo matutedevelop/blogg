@@ -2,8 +2,7 @@
 date: 2025-02-01
 title: test 1
 math: "true"
-type:
-  - post
+type: post
 ---
 
 
