@@ -1,4 +1,4 @@
-baseURL = 'https://example.org'
+baseURL = 'https://DSStudent.xyz'
 languageCode = 'en-us'
 title = 'DSStudent'
 theme = "hugo-brewm"
