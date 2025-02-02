@@ -34,4 +34,4 @@ for filename in os.listdir(posts_dir):
         with open(filepath, "w", encoding="utf-8") as file:
             file.write(content)
 
-print("Markdown files processed and images copied successfully --- --- ---.")
+print("Markdown files processed and images copied successfully.")
