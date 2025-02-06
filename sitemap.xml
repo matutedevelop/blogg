@@ -2,19 +2,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://matutedevelop.github.io/blogg/</loc>
-    <lastmod>2025-02-01T00:00:00+00:00</lastmod>
-    </url>
-  <url>
-    <loc>https://matutedevelop.github.io/blogg/posts.html</loc>
-    <lastmod>2025-02-01T00:00:00+00:00</lastmod>
-    </url>
-  <url>
-    <loc>https://matutedevelop.github.io/blogg/posts/este-es-un-test-mamalon-que-esta-todo-chido.html</loc>
-    <lastmod>2025-02-01T00:00:00+00:00</lastmod>
-    </url>
-  <url>
-    <loc>https://matutedevelop.github.io/blogg/posts/202502021526.html</loc>
+    <loc>https://matutedevelop.github.io/blogg/posts/202502052322.html</loc>
     
     </url>
   <url>
@@ -22,11 +10,15 @@
     
     </url>
   <url>
-    <loc>https://matutedevelop.github.io/blogg/tags.html</loc>
+    <loc>https://matutedevelop.github.io/blogg/</loc>
     
     </url>
   <url>
-    <loc>https://matutedevelop.github.io/blogg/posts/relaciones.html</loc>
+    <loc>https://matutedevelop.github.io/blogg/posts.html</loc>
+    
+    </url>
+  <url>
+    <loc>https://matutedevelop.github.io/blogg/tags.html</loc>
     
     </url>
 </urlset>
