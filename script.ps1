@@ -5,7 +5,7 @@ $sourcePath = "C:\Users\fofoy\OneDrive - ITESO\notest\posts"
 $destinationPath = "D:\dsblogg\blogg\content\posts"
 
 # Set Github repo 
-$myrepo = "https://github.com/matutedevelop/dsblogg.git"
+$myrepo = "https://github.com/matutedevelop/blogg.git"
 
 # Set error handling
 $ErrorActionPreference = "Stop"
