@@ -2,27 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/posts/202502171328/</loc>
-    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
+    <loc>https://example.org/posts/202502241535/</loc>
+    <lastmod>2025-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.org/</loc>
-    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://example.org/tags/math/calculus/integral/</loc>
-    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.org/posts/</loc>
-    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.org/tags/</loc>
-    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://example.org/posts/conjugados-e-inversos-de-numeros-complejos/</loc>
-  </url><url>
-    <loc>https://example.org/posts/202502052322/</loc>
-  </url><url>
-    <loc>https://example.org/tags/math/algebra/</loc>
-  </url><url>
-    <loc>https://example.org/tags/math/complex_analysis/</loc>
   </url>
 </urlset>
