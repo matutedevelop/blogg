@@ -2,12 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/posts/202502052322/</loc>
+    <loc>https://example.org/posts/202502171328/</loc>
+    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.org/</loc>
+    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.org/tags/math/calculus/integral/</loc>
+    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.org/posts/</loc>
+    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.org/tags/</loc>
+    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.org/posts/202502052322/</loc>
   </url>
 </urlset>
