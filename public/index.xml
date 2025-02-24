@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on DSStudent</title>
-    <link>https://example.org/</link>
+    <link>https://matutedevelop.github.io/blogg/</link>
     <description>Recent content in Home on DSStudent</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 24 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://matutedevelop.github.io/blogg/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>202502241535</title>
-      <link>https://example.org/posts/202502241535/</link>
+      <link>https://matutedevelop.github.io/blogg/posts/202502241535/</link>
       <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/202502241535/</guid>
-      <description>&lt;p&gt;skchaugbihjs jdhoi!&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;figure class=&#34;&#34;&gt;&#xD;&#xA;&#xD;&#xA;    &lt;div&gt;&#xD;&#xA;        &lt;img loading=&#34;lazy&#34; alt=&#34;Image Description&#34; src=&#34;https://example.org/images/Pasted%20image%2020250224153602.png&#34; &gt;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&#xD;&#xA;    &#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;$\mathbb{\mathrm{Re}ales y juan}$&lt;/p&gt;</description>
+      <guid>https://matutedevelop.github.io/blogg/posts/202502241535/</guid>
+      <description>&lt;p&gt;skchaugbihjs jdhoi!&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;figure class=&#34;&#34;&gt;&#xD;&#xA;&#xD;&#xA;    &lt;div&gt;&#xD;&#xA;        &lt;img loading=&#34;lazy&#34; alt=&#34;Image Description&#34; src=&#34;https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250224153602.png&#34; &gt;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&#xD;&#xA;    &#xD;&#xA;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;$\mathbb{\mathrm{Re}ales y juan}$&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
