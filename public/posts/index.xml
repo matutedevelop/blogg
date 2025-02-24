@@ -16,6 +16,13 @@
       <description>&lt;h1 class=&#34;heading&#34; id=&#34;integrales-importantes&#34;&gt;&#xD;&#xA;  Integrales importantes&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#integrales-importantes&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;#flashcards/math&lt;/p&gt;&#xA;&lt;p&gt;$$\int \frac{du}{a^2+u^2}$$::$$\frac{1}{a} \arctan \frac{x}{a} +c$$&lt;/p&gt;&#xA;&lt;p&gt;$$\int \frac{du}{u\sqrt{ u^2-a^2 }}$$ ::$$arc\sec \frac{x}{a} +c$$&lt;/p&gt;</description>
     </item>
     <item>
+      <title></title>
+      <link>https://example.org/posts/conjugados-e-inversos-de-numeros-complejos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/conjugados-e-inversos-de-numeros-complejos/</guid>
+      <description>&lt;h1 class=&#34;heading&#34; id=&#34;numeros-complejos&#34;&gt;&#xD;&#xA;  Numeros complejos&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#numeros-complejos&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;todos los numeros reales y con los que hasta ahora he trabajo son numeros complejos&#xA;$\mathbb{R}\subset \mathbb{C}$.&lt;/p&gt;&#xA;&lt;p&gt;Son numeros con una parte real y otra &lt;strong&gt;imaginaria&lt;/strong&gt; y se escriben $a+bi$&lt;/p&gt;&#xA;&lt;h2 class=&#34;heading&#34; id=&#34;conjugados&#34;&gt;&#xD;&#xA;  Conjugados&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#conjugados&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;El conjugado de un numero complejo $z=a+bi$ es igual a $\bar{z}= a-bi$&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;[!NOTE]&#xA;note que el conjugado de un número con &lt;em&gt;parte imaginaria 0&lt;/em&gt;, es decir, un número real, es el mismo numero&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>202502052322</title>
       <link>https://example.org/posts/202502052322/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

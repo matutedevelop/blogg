@@ -17,6 +17,12 @@
     <loc>https://example.org/tags/</loc>
     <lastmod>2025-02-17T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://example.org/posts/conjugados-e-inversos-de-numeros-complejos/</loc>
+  </url><url>
     <loc>https://example.org/posts/202502052322/</loc>
+  </url><url>
+    <loc>https://example.org/tags/math/algebra/</loc>
+  </url><url>
+    <loc>https://example.org/tags/math/complex_analysis/</loc>
   </url>
 </urlset>
