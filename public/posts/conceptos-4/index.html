@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://matutedevelop.github.io/blogg//favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://matutedevelop.github.io/blogg//favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://matutedevelop.github.io/blogg//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://matutedevelop.github.io/blogg//android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://matutedevelop.github.io/blogg//apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Combinaciones, permutaciones y principio multiplicativo | DSStudent
+    
+</title>
+
+<link rel="canonical" href="https://matutedevelop.github.io/blogg/posts/conceptos-4/"/>
+
+<meta property="og:url" content="https://matutedevelop.github.io/blogg/posts/conceptos-4/">
+  <meta property="og:site_name" content="DSStudent">
+  <meta property="og:title" content="Combinaciones, permutaciones y principio multiplicativo">
+  <meta property="og:description" content="formulas y definiciones de probabilidad">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-26T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-26T00:00:00+00:00">
+    <meta property="article:tag" content="MATH/PROBABILITY">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blogg/assets/combined.min.168697228e911f1735b65f3c2808c06d4312df56b47fee1f7af14b8dae06137c.css" media="all">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+<body class="light">
+
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="https://matutedevelop.github.io/blogg/">DSStudent</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                /home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                /posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/about" >
+                /about
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+    </header>
+
+    <main class="main">
+      
+
+
+
+
+
+
+
+<div  class="autonumber" >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">Combinaciones, permutaciones y principio multiplicativo</h1>
+    
+    <p class="single-summary">formulas y definiciones de probabilidad</p>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-02-26T00:00:00&#43;00:00">February 26, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      4 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ie">$i.e.$</a>
+      <ul>
+        <li><a href="#tomando-todos-los-elementos-permutaciones">tomando todos los elementos (Permutaciones)</a></li>
+        <li><a href="#tomando-menos-de-en-elementos">Tomando menos de en elementos</a></li>
+        <li><a href="#permutaciones-con-remplazo">Permutaciones con remplazo</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h1 class="heading" id="regla-de-la-multiplicación">
+  Regla de la multiplicación
+  <a class="anchor" href="#regla-de-la-multiplicaci%c3%b3n">#</a>
+</h1>
+<p>También conocido como principio multiplicativo se aplica cuando tenemos dos instancias de <em>experimentos o eventos</em>. <strong>Completamente independientes</strong> y queremos calcular el número de posibles <em>out comes</em> o resultados posibles.</p>
+<blockquote>
+<p>[! Tip] # $\Im$ def
+#MATH/DEF
+Si un evento $A$ puede ocurrir de $n$ formas diferentes y un evento $B$ de $m$ formas diferentes, entonces ambos pueden ocurrir de $mn$ formas diferentes</p>
+</blockquote>
+<p>como curiosidad el número de formas en las que pueden ocurrir $A$ y $B$ coincide con el cardinal del producto cruz entre estos dos</p>
+<p>$$#(A\times B)$$</p>
+<p>Con el principio multiplicativo se contabilizan las formas en las que pueden ocurrir $A$ y $B$, en las que se asume que el orden es irrelevante y los eventos son independientes.</p>
+<h1 class="heading" id="permutaciones">
+  Permutaciones
+  <a class="anchor" href="#permutaciones">#</a>
+</h1>
+<p>Por otro lado, cuando tenemos una cadena de eventos <strong>siempre</strong>, en las que el <strong>orden es importante</strong> y queremos <em>contar</em> el número de veces en las que podrían ocurrir, entonces estaríamos buscando <em>el número de permutaciones</em> de estos eventos.</p>
+<h2 class="heading" id="ie">
+  $i.e.$
+  <a class="anchor" href="#ie">#</a>
+</h2>
+<p>Se tiene $a,b,c$ que son eventos <em>seguros</em> (que ocurren siempre) en los que el orden en los que ocurren los mismos es relevante, y queremos saber todos los posibles <em>&ldquo;ordenes&rdquo;</em> o <em>formas</em> en las que pueden ocurrir.</p>
+<p>Podemos expresar un orden o una forma con una cadena de la siguiente forma</p>
+<p>$$abc$$</p>
+<p>Ahora encontremos todas las permutaciones posibles.</p>
+<p>$$1. ~~abc$$
+$$2.~~acb$$
+$$3.~~bac$$
+$$4.~~bca$$
+$$5.~~cab$$
+$$6.~~cba$$</p>
+<p>Se tienen 6 posibilidades.</p>
+<p>Cuando hablamos de <em>permutaciones de los eventos</em> es importante recordar que se pueden sustituir las variables que representan los eventos con casi cualquier cosa, pudiendo así sustituir para encontrar por ejemplo las posibles sub secuencias de caracteres, filas posibles con 4 personas, etc.</p>
+<p>Si se desea encontrar el número de permutaciones no es necesario encontrar todos los órdenes de manera manual. Esto se puede realizar de manera abstracta con las fórmulas de permutaciones</p>
+<h3 class="heading" id="tomando-todos-los-elementos-permutaciones">
+  tomando todos los elementos (Permutaciones)
+  <a class="anchor" href="#tomando-todos-los-elementos-permutaciones">#</a>
+</h3>
+<p>si se tienen $n$ objetos entonces existen $n!$ permutaciones posibles, donde $n!$ se define de la siguiente forma</p>
+<p>$$n!:=n(n-1)(n-2)\dots (2)(1)$$</p>
+<p>y ademas $$0! = 1$$.</p>
+<p>Esto último puede resultar un poco extraño pero mas delante tomara sentido</p>
+<h3 class="heading" id="tomando-menos-de-en-elementos">
+  Tomando menos de en elementos
+  <a class="anchor" href="#tomando-menos-de-en-elementos">#</a>
+</h3>
+<p>Existen muchos casos en los que en el conteo no se pueden tomar todos los elementos disponibles, por ejemplo, todos los posibles podios de una carrera de 20 corredores.</p>
+<p>Para este conteo, es evidente que el orden importa, pero solo estamos nos importan el orden de 3 de los 20 corredores.</p>
+<p>Para resolver este problema y encontrar el número de permutaciones (posibles podios de la carrera) podemos hacer uso de la siguiente fórmula</p>
+<p>$$<em>{n}P</em>{r} = \frac{n!}{(n-r)!}$$</p>
+<p>de donde $n$ es el número de <em>elementos</em> posibles y $r$ el número de elementos que se toman</p>
+<h3 class="heading" id="permutaciones-con-remplazo">
+  Permutaciones con remplazo
+  <a class="anchor" href="#permutaciones-con-remplazo">#</a>
+</h3>
+<p>Existe otro caso en el que se pueden repetir loe ventots, como por ejemplo tirar un dado 3 veces.</p>
+<p>A diferencia de los otros casos donde usábamos os un elemento y no podíamos os repetir. Aquí al tirar de nuevo los dados puede salir el mismo número más de una vez.</p>
+<p>En caso de estar frente a uno de estos casos, el númerode permutaciones es dado por</p>
+<p>$$n^k$$</p>
+<p>de donde $n$ son los elementos disponibles y $k$ el númerode repeticiones</p>
+<h1 class="heading" id="combinaciones">
+  Combinaciones
+  <a class="anchor" href="#combinaciones">#</a>
+</h1>
+<p>Existen muchos otros problemas donde el orden no es importante, como por ejemplo el 11 inicial con el que sale a jugar un equipo con una plantilla de 25 jugadores.</p>
+<p>Aunque pueda sonar similar, son cosas fundamentalmente diferentes y el número total de combinaciones y permutaciones es algo que se calcula también de forma diferente.</p>
+<p>El número de las combinaciones de $n$ elementos posibles tomando $r$ se calcula de la siguiente forma</p>
+<p>$$\begin{pmatrix}
+n \
+r
+\end{pmatrix} =
+\frac{n!}{(n-r!)r!}$$</p>
+<p>Nótese que cuando $n=r$ las combinaciones son igual a 1, esto tiene sentido, ya que si nuestro supuesto equipo tiene una plantilla de 11 jugadores solo existe un único equipo titular.</p>
+
+    
+  </div>
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    <p>Powered by
+        <a href="https://gohugo.io/">Hugo</a>
+        and
+        written by Juan Pablo Arroyo
+    </p>
+    
+    
+    
+
+
+  </footer>
+
+  
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
+    });
+  });
+</script>
+  
+
+</body>
+
+<script src="/blogg/js/theme-switch.js"></script>
+<script defer src="/blogg/js/copy-code.js"></script>
+</html>
