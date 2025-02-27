@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on DSStudent</title>
-    <link>https://matutedevelop.github.io/blogg/</link>
-    <description>Recent content in Home on DSStudent</description>
+    <title>MATH/PROBABILITY on DSStudent</title>
+    <link>https://matutedevelop.github.io/blogg/tags/math/probability/</link>
+    <description>Recent content in MATH/PROBABILITY on DSStudent</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 26 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://matutedevelop.github.io/blogg/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://matutedevelop.github.io/blogg/tags/math/probability/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Combinaciones, permutaciones y principio multiplicativo</title>
       <link>https://matutedevelop.github.io/blogg/posts/conceptos-4/</link>
