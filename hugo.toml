@@ -14,14 +14,14 @@ description = "A Data Science Blog"
 
 # Appearance settings
 theme = 'light'
-colorPalette = 'gruvebox'
+colorPalette = 'base16'
 hideHeader = false
 
 # Intro on main page, content is markdown
 homeIntroTitle = 'Quiubo!'
 homeIntroContent = """
-I am a Data Science undergraduate Student who likes to write about his college journey in.
-I am interested in a range of topics, including algorithms, distributed systems, databases, and in  rmation retrieval.
+I am a Data Science undergraduate Student who likes to write about his college journey .
+I am interested in a range of topics, mainly pure maths, set theory,abstract algebra and data science and data analysis aplications .
 """
 
 # Collection to display on home
