@@ -16,7 +16,7 @@ class: ITESO/COE
 
 
 
-Aquí tienes una tabla de markdown con las principales falacias lógicas, su descripción y cómo identificarlas:
+Aquí tienes una tabla de Markdown con las principales falacias lógicas, su descripción y cómo identificarlas:
 
 | Falacia | Descripción | Cómo identificarla |
 | --- | --- | --- |
