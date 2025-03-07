@@ -1,6 +1,6 @@
 ---
 title: "{{Tipos de Falacias}}"
-date: "{{03-06-2025}}"
+date: "{{2025-03-06}}"
 tags: 
 summary: ""
 description: ""
