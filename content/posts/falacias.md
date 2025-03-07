@@ -2,8 +2,8 @@
 title: "{{Tipos de Falacias}}"
 date: "{{2025-03-06}}"
 tags: 
-summary: ""
-description: ""
+summary: Tabla de falacias
+description: Un recurso para identificar los tipos de falacias
 toc: true
 readTime: true
 autonumber: true
