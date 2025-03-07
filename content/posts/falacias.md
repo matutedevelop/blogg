@@ -31,4 +31,4 @@ Aquí tienes una tabla de Markdown con las principales falacias lógicas, su des
 | Falacia de la composición | Asumir que lo que es cierto para las partes de un todo, también es cierto para el todo en sí. | Cuando se infiere que algo es verdad para el todo, solo porque es verdad para algunas de sus partes. |
 | Falacia de la división | Asumir que lo que es cierto para el todo, también es cierto para cada una de las partes. | Cuando se infiere que algo es verdad para las partes, solo porque es verdad para el todo. |
 
-Esta tabla puede servir como un recurso útil para identificar y evitar falacias lógicas en argumentos y discusiones.
+Esta tabla puede servir como un recurso útil para identificar y evitar falacias lógicas en argumentos y discusiones .
