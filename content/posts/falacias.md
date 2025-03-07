@@ -1,5 +1,5 @@
 ---
-title: "{{Tipos de Falacias}}"
+title: "Tipos de Falacias"
 date: "{{2025-03-06}}"
 tags: 
 summary: Tabla de falacias
