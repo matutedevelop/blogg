@@ -2,21 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://matutedevelop.github.io/blogg/posts/conceptos-4/</loc>
-    <lastmod>2025-02-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://matutedevelop.github.io/blogg/</loc>
+    <lastmod>2025-03-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://matutedevelop.github.io/blogg/posts/</loc>
+    <lastmod>2025-03-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://matutedevelop.github.io/blogg/posts/falacias/</loc>
+    <lastmod>2025-03-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://matutedevelop.github.io/blogg/posts/conceptos-4/</loc>
     <lastmod>2025-02-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://matutedevelop.github.io/blogg/tags/math/probability/</loc>
     <lastmod>2025-02-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://matutedevelop.github.io/blogg/posts/</loc>
-    <lastmod>2025-02-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://matutedevelop.github.io/blogg/tags/</loc>
     <lastmod>2025-02-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://matutedevelop.github.io/blogg/posts/falacias/</loc>
   </url>
 </urlset>
