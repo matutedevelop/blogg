@@ -22,5 +22,12 @@
       <guid>https://matutedevelop.github.io/blogg/posts/conceptos-4/</guid>
       <description>formulas y definiciones de probabilidad</description>
     </item>
+    <item>
+      <title>Teorema de bayes</title>
+      <link>https://matutedevelop.github.io/blogg/posts/teorema-de-bayes/</link>
+      <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://matutedevelop.github.io/blogg/posts/teorema-de-bayes/</guid>
+      <description>&lt;h1 class=&#34;heading&#34; id=&#34;thomas-bayes&#34;&gt;&#xD;&#xA;  Thomas Bayes&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#thomas-bayes&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;Nacido en &lt;em&gt;1702&lt;/em&gt; hijo de uno de los primeros ministros presbiterianos ordenados el Inglaterra. Vivió su juventud en &lt;em&gt;St. Thomas&lt;/em&gt; donde se especula que fue alumno de De Moivre, conocido por el teorema de  análisis complejo que lleva su nombre y por sus aportaciones con el teorema de De Moivre-Laplace que es un caso particular de él [[ CTL| Teorema del limite central]] que conecta la [[distribucion binomial]] con una [[distribucion normal]].&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
