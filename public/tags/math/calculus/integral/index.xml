@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MATH/CALCULUS/INTEGRAL on DSStudent</title>
-    <link>https://example.org/tags/math/calculus/integral/</link>
+    <link>https://matutedevelop.github.io/blogg/tags/math/calculus/integral/</link>
     <description>Recent content in MATH/CALCULUS/INTEGRAL on DSStudent</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/math/calculus/integral/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://matutedevelop.github.io/blogg/tags/math/calculus/integral/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
-      <link>https://example.org/posts/202502171328/</link>
-      <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/202502171328/</guid>
-      <description>&lt;h1 class=&#34;heading&#34; id=&#34;integrales-importantes&#34;&gt;&#xD;&#xA;  Integrales importantes&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#integrales-importantes&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;#flashcards/math&lt;/p&gt;&#xA;&lt;p&gt;$$\int \frac{du}{a^2+u^2}$$::$$\frac{1}{a} \arctan \frac{x}{a} +c$$&lt;/p&gt;&#xA;&lt;p&gt;$$\int \frac{du}{u\sqrt{ u^2-a^2 }}$$ ::$$arc\sec \frac{x}{a} +c$$&lt;/p&gt;</description>
+      <title>Solidos de revolucion</title>
+      <link>https://matutedevelop.github.io/blogg/posts/solidos-de-revolucion/</link>
+      <pubDate>Sun, 20 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://matutedevelop.github.io/blogg/posts/solidos-de-revolucion/</guid>
+      <description>Documentacion del proyecto de solidos de</description>
     </item>
   </channel>
 </rss>

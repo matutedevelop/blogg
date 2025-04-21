@@ -15,5 +15,12 @@
       <guid>https://matutedevelop.github.io/blogg/posts/conceptos-4/</guid>
       <description>formulas y definiciones de probabilidad</description>
     </item>
+    <item>
+      <title>Teorema de bayes</title>
+      <link>https://matutedevelop.github.io/blogg/posts/teorema-de-bayes/</link>
+      <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://matutedevelop.github.io/blogg/posts/teorema-de-bayes/</guid>
+      <description>Un vistazo a la historia del teorema de bayes y su relevancia</description>
+    </item>
   </channel>
 </rss>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://matutedevelop.github.io/blogg//favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://matutedevelop.github.io/blogg//favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://matutedevelop.github.io/blogg//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://matutedevelop.github.io/blogg//android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://matutedevelop.github.io/blogg//apple-touch-icon.png">
+
+<meta name="description" content="Equipo: Juan Pablo Arroyo, Aaron Becerra, Fernando Santoyo"/>
+
+
+
+<title>
+    
+    Solidos de revolucion | DSStudent
+    
+</title>
+
+<link rel="canonical" href="https://matutedevelop.github.io/blogg/posts/solidos-de-revolucion/"/>
+
+<meta property="og:url" content="https://matutedevelop.github.io/blogg/posts/solidos-de-revolucion/">
+  <meta property="og:site_name" content="DSStudent">
+  <meta property="og:title" content="Solidos de revolucion">
+  <meta property="og:description" content="Equipo: Juan Pablo Arroyo, Aaron Becerra, Fernando Santoyo">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-04-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-04-20T00:00:00+00:00">
+    <meta property="article:tag" content="MATH/CALCULUS/INTEGRAL">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blogg/assets/combined.min.168697228e911f1735b65f3c2808c06d4312df56b47fee1f7af14b8dae06137c.css" media="all">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+<body class="light">
+
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="https://matutedevelop.github.io/blogg/">DSStudent</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                /home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                /posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/about" >
+                /about
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+    </header>
+
+    <main class="main">
+      
+
+
+
+
+
+
+
+<div  class="autonumber" >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">Solidos de revolucion</h1>
+    
+    <p class="single-summary">Documentacion del proyecto de solidos de</p>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-04-20T00:00:00&#43;00:00">April 20, 2025</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      4 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#12-volumen">1.2 Volumen</a>
+      <ul>
+        <li><a href="#121-el-desarrollo-de-la-noción-de-volumen">1.2.1 El desarrollo de la noción de volumen</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#21-tomando-puntos-de-muestreo-de-la-botella">2.1 Tomando puntos de muestreo de la botella</a>
+      <ul>
+        <li><a href="#211-procedimiento">2.1.1 Procedimiento</a></li>
+      </ul>
+    </li>
+    <li><a href="#22-ajustando-curva-a-los-puntos">2.2 Ajustando curva a los puntos</a></li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h1 class="heading" id="objetivo-del-proyecto">
+  Objetivo del proyecto
+  <a class="anchor" href="#objetivo-del-proyecto">#</a>
+</h1>
+<p>El objetivo final de este proyecto es poder estimar el volumen de una botella de coca cola de 355 ml retornable solamente tomando del diámetro de la misma</p>
+<h1 class="heading" id="1-el-volumen">
+  1. El volumen
+  <a class="anchor" href="#1-el-volumen">#</a>
+</h1>
+<h1 class="heading" id="11-como-se-calcula-el-volumen">
+  1.1 Como se calcula el volumen
+  <a class="anchor" href="#11-como-se-calcula-el-volumen">#</a>
+</h1>
+<p>Antes de empezar a calcular volúmenes de sólidos de revolución es pertinente reflexionar un poco sobre como calculamos el volumen en primer lugar, y que es lo que volumen significa.</p>
+<h2 class="heading" id="12-volumen">
+  1.2 Volumen
+  <a class="anchor" href="#12-volumen">#</a>
+</h2>
+<h3 class="heading" id="121-el-desarrollo-de-la-noción-de-volumen">
+  1.2.1 El desarrollo de la noción de volumen
+  <a class="anchor" href="#121-el-desarrollo-de-la-noci%c3%b3n-de-volumen">#</a>
+</h3>
+<p>El volumen surge antes de todo desarrollo matemático como una magnitud de interés no solo en la física elemental, sino también para casi toda actividad humana. En todo momento interactuamos con objetos en nuestro espacio, que tienen <strong>volumen</strong>, tienen un contorno y un interior que no puede ser ocupado por ninguna otra cosa. El interés en la formulación de métodos para calcular esta magnitud es de evidente importancia para ramas como la ingeniería, la física, la Arquitectura o incluso la logística. No obstante en la antigüedad este desarrollo siempre se vería opacado por el desarrollo de la matemática de la geometría bidimensional y el cálculo de <em>Áreas</em> por parte de los griegos, que para sorpresa de nadie se trata del <em>volumen</em> (<strong>medida</strong>) en un espacio de una dimensión menor.</p>
+<p>Una excepción más que destacable de esta tendencia y fascinación griega por las figuras planas es Arquímedes. Que se destacó por sus descubrimientos de las relaciones entre volúmenes de diferentes cuerpos, como mejor ejemplo el descubrimiento de que <em>el volumen de la esfera es  $\frac{2}{3}$ la del cilindro en el que está inscrito.</em> Este descubrimiento le fascinaba tanto a Arquímedes que se tallaría en su tumba a su petición. Todos estos descubrimientos fueron hechos a través de su famoso método de exacción que en su formulación yace la idea esencial del cálculo integral y los infinitesimales.</p>
+<p>Otro importante avance en la caracterización rigurosa de la noción de volumen fue dada por <em>Buenaventura Cavalieri</em>, que bajo su principio establecio que</p>
+<p>No obstante las matemáticas no acatarían la noción de volumen hasta la formulación de la <strong>teoría de la medida</strong>. Esta teoría generaliza la noción de volumen para espacios y conjuntos en dimensiones superiores. La naturaleza de esta teoría es más del interés del análisis y la topología que de la de la geometría, no obstante resulta útil para la comprensión de nuestro cometido, pues enlaza de manera general la noción de integral con la de <em>volumen</em> o <em>medida</em>.</p>
+<blockquote>
+<p>&ldquo;La noción de medida es una generalización de las ideas de longitud, área o volumen. Como veremos, toda medida lleva además aparejada una correspondiente noción de Integral. &quot;</p>
+<ul>
+<li><em>José C. Sabina de Lis</em> en</li>
+</ul>
+</blockquote>
+<p>Para entender como es que se calcula el volumen de cuerpos tridimensionales con herramientas de cálculo de una variable es importante también entender la aparente de la situación</p>
+<h1 class="heading" id="2-obteniendo-el-volumen-de-la-botella">
+  2 Obteniendo el volumen de la botella
+  <a class="anchor" href="#2-obteniendo-el-volumen-de-la-botella">#</a>
+</h1>
+<h2 class="heading" id="21-tomando-puntos-de-muestreo-de-la-botella">
+  2.1 Tomando puntos de muestreo de la botella
+  <a class="anchor" href="#21-tomando-puntos-de-muestreo-de-la-botella">#</a>
+</h2>
+<p>Este paso consiste en obtener la materia prima con la que estaremos trabajando, apartir los resultados siguientes del proyecto se derivan de estos datos.</p>
+<p>Estos datos toman la forma de dos sucesiónes  $x_{0},x_{1},\dots,x_{n}$ y $y_{0},y_{1},\dots,y_{n}$  de donde $x_{i}$ es el largo de la botella apartir del cuello y   $y_{i}$ es el radio de la botella en $x_{i}$</p>
+<h3 class="heading" id="211-procedimiento">
+  2.1.1 Procedimiento
+  <a class="anchor" href="#211-procedimiento">#</a>
+</h3>
+<p>Se desean obtener los puntos apartir de una botella de coca cola retornable de 355ml</p>
+<p>!
+
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Image Description" src="https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250420133506.png" >
+    </div>
+
+    
+</figure>
+</p>
+<p>La idea es sencilla, por la forma en la que se calcula el volumen del sólido de revolución con el método de discos necesitamos que nuestro integrando sea una función que nos devuelva el radio de la botella a lo largo de longitud de la botella.</p>
+<p>![[Solidos de revolucion 2025-04-20 13.22.51.excalidraw]]</p>
+<p>Entonces con ayuda de un bernier y una cinta metrica medimos el <em>diametro</em> de la botella a lo largo de 24 puntos equidistantes por 1cm, y atraves de la relacion del radio de la circunferencia con s diametro se obtuvo cada punto $y_{i}$</p>
+<p>$$</p>
+<p>r=y_{i}=\frac{d}{2}
+$$</p>
+<p>Se obtuvieron los siguientes datos.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">yᵢ</th>
+          <th style="text-align: center">xᵢ</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">1.40</td>
+          <td style="text-align: center">0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1.30</td>
+          <td style="text-align: center">1</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1.25</td>
+          <td style="text-align: center">2</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1.35</td>
+          <td style="text-align: center">3</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1.45</td>
+          <td style="text-align: center">4</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1.65</td>
+          <td style="text-align: center">5</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1.95</td>
+          <td style="text-align: center">6</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">2.35</td>
+          <td style="text-align: center">7</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">2.55</td>
+          <td style="text-align: center">8</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">2.75</td>
+          <td style="text-align: center">9</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">2.89</td>
+          <td style="text-align: center">10</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">3.00</td>
+          <td style="text-align: center">11</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">3.05</td>
+          <td style="text-align: center">12</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">3.10</td>
+          <td style="text-align: center">13</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">3.13</td>
+          <td style="text-align: center">14</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">3.05</td>
+          <td style="text-align: center">15</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">2.90</td>
+          <td style="text-align: center">16</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">2.80</td>
+          <td style="text-align: center">17</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">2.70</td>
+          <td style="text-align: center">18</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">2.60</td>
+          <td style="text-align: center">19</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">2.55</td>
+          <td style="text-align: center">20</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">2.70</td>
+          <td style="text-align: center">21</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">3.05</td>
+          <td style="text-align: center">22</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">3.15</td>
+          <td style="text-align: center">23</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">2.85</td>
+          <td style="text-align: center">24.5</td>
+      </tr>
+  </tbody>
+</table>
+<p>Graficando se confirma efectivamente  asemejan la silueta de la botella partida a la mitad.</p>
+<p>![[Pasted image 20250420131758.png|1000]]</p>
+<h2 class="heading" id="22-ajustando-curva-a-los-puntos">
+  2.2 Ajustando curva a los puntos
+  <a class="anchor" href="#22-ajustando-curva-a-los-puntos">#</a>
+</h2>
+<h1 class="heading" id="porque-lagrange-vs-mls">
+  Porque Lagrange vs MLS
+  <a class="anchor" href="#porque-lagrange-vs-mls">#</a>
+</h1>
+<ul>
+<li>Lagrange se centra en interpolar en los puntos dados, es decir $P(x_{i})=y_{i}$, prioriza eso  y le vale madre el error</li>
+</ul>
+<h1 class="heading" id="bibliografia">
+  Bibliografia
+  <a class="anchor" href="#bibliografia">#</a>
+</h1>
+<ul>
+<li><a href="https://static.sumaysigue.uchile.cl/disponibilizacion_aula360/G3D/U3%20-%20Generaci%C3%B3n%20de%20cuerpos%20utilizando%20patrones%20geom%C3%A9tricos/T2%20-%20Volumen%20de%20cuerpos%20geom%C3%A9tricos_/C1%20-%20Volumen%20y%20Principio%20de%20Cavalieri/Apunte%20Volumen%20y%20Principio%20de%20Cavalieri.pdf">https://static.sumaysigue.uchile.cl/disponibilizacion_aula360/G3D/U3%20-%20Generaci%C3%B3n%20de%20cuerpos%20utilizando%20patrones%20geom%C3%A9tricos/T2%20-%20Volumen%20de%20cuerpos%20geom%C3%A9tricos_/C1%20-%20Volumen%20y%20Principio%20de%20Cavalieri/Apunte%20Volumen%20y%20Principio%20de%20Cavalieri.pdf</a></li>
+<li>Curso_Teoria_Medida.pdf</li>
+<li>file:///C:/Users/fofoy/Downloads/ENTRETEXTOS-30-L2.pdf</li>
+</ul>
+
+    
+  </div>
+
+  
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/blogg/posts/falacias/">
+                        Tipos de Falacias
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    <p>Powered by
+        <a href="https://gohugo.io/">Hugo</a>
+        and
+        written by Juan Pablo Arroyo
+    </p>
+    
+    
+    
+
+
+  </footer>
+
+  
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
+    });
+  });
+</script>
+  
+
+</body>
+
+<script src="/blogg/js/theme-switch.js"></script>
+<script defer src="/blogg/js/copy-code.js"></script>
+</html>
