@@ -88,7 +88,6 @@ La idea es sencilla, por la forma en la que se calcula el volumen del sólido de
 Entonces con ayuda de un bernier y una cinta metrica medimos el *diametro* de la botella a lo largo de 24 puntos equidistantes por 1cm, y atraves de la relacion del radio de la circunferencia con s diametro se obtuvo cada punto $y_{i}$
 
 $$
-
 r=y_{i}=\frac{d}{2}
 $$
 
@@ -130,6 +129,13 @@ Graficando se confirma efectivamente  asemejan la silueta de la botella partida 
 
 
 ## 2.2 Ajustando curva a los puntos
+
+El siguiente paso es poder encontrar una curva que se asemeje a la de la botella. Debido a que se cuenta con una cantidad relativamente generosa de puntos, el primer metodo que intentamos es el de interpolacion
+
+### Interpolación
+
+Interpolar quiere decir que para nuestros puntos $(x_{0},y_{0}),(x_{1},y_{1}),\dots(x_{n},y_{n})$ buscamos encontrar una funcion $f$ tal que $f(x_{i}) = y_{i}$
+
 
 # Porque Lagrange vs MLS
 

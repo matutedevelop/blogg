@@ -175,7 +175,11 @@
         <li><a href="#211-procedimiento">2.1.1 Procedimiento</a></li>
       </ul>
     </li>
-    <li><a href="#22-ajustando-curva-a-los-puntos">2.2 Ajustando curva a los puntos</a></li>
+    <li><a href="#22-ajustando-curva-a-los-puntos">2.2 Ajustando curva a los puntos</a>
+      <ul>
+        <li><a href="#interpolación">Interpolación</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </aside>
@@ -256,8 +260,8 @@
 <p>La idea es sencilla, por la forma en la que se calcula el volumen del sólido de revolución con el método de discos necesitamos que nuestro integrando sea una función que nos devuelva el radio de la botella a lo largo de longitud de la botella.</p>
 <p>![[Solidos de revolucion 2025-04-20 13.22.51.excalidraw]]</p>
 <p>Entonces con ayuda de un bernier y una cinta metrica medimos el <em>diametro</em> de la botella a lo largo de 24 puntos equidistantes por 1cm, y atraves de la relacion del radio de la circunferencia con s diametro se obtuvo cada punto $y_{i}$</p>
-<p>$$</p>
-<p>r=y_{i}=\frac{d}{2}
+<p>$$
+r=y_{i}=\frac{d}{2}
 $$</p>
 <p>Se obtuvieron los siguientes datos.</p>
 <table>
@@ -376,6 +380,12 @@ $$</p>
   2.2 Ajustando curva a los puntos
   <a class="anchor" href="#22-ajustando-curva-a-los-puntos">#</a>
 </h2>
+<p>El siguiente paso es poder encontrar una curva que se asemeje a la de la botella. Debido a que se cuenta con una cantidad relativamente generosa de puntos, el primer metodo que intentamos es el de interpolacion</p>
+<h3 class="heading" id="interpolación">
+  Interpolación
+  <a class="anchor" href="#interpolaci%c3%b3n">#</a>
+</h3>
+<p>Interpolar quiere decir que para nuestros puntos $(x_{0},y_{0}),(x_{1},y_{1}),\dots(x_{n},y_{n})$ buscamos encontrar una funcion $f$ tal que $f(x_{i}) = y_{i}$</p>
 <h1 class="heading" id="porque-lagrange-vs-mls">
   Porque Lagrange vs MLS
   <a class="anchor" href="#porque-lagrange-vs-mls">#</a>
