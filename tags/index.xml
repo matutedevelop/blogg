@@ -6,13 +6,27 @@
     <description>Recent content in Tags on DSStudent</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 20 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://matutedevelop.github.io/blogg/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MATH/CALCULUS/INTEGRAL</title>
+      <link>https://matutedevelop.github.io/blogg/tags/math/calculus/integral/</link>
+      <pubDate>Sun, 20 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://matutedevelop.github.io/blogg/tags/math/calculus/integral/</guid>
+      <description></description>
+    </item>
     <item>
       <title>MATH/PROBABILITY</title>
       <link>https://matutedevelop.github.io/blogg/tags/math/probability/</link>
       <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
       <guid>https://matutedevelop.github.io/blogg/tags/math/probability/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>STATISTICS</title>
+      <link>https://matutedevelop.github.io/blogg/tags/statistics/</link>
+      <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://matutedevelop.github.io/blogg/tags/statistics/</guid>
       <description></description>
     </item>
   </channel>
