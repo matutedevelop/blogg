@@ -147,7 +147,7 @@
 
       
       &nbsp; · &nbsp;
-      6 min read
+      7 min read
       
     </p>
 
@@ -414,14 +414,38 @@ $$P(x_{n})=a_{0}+a_{1}x_{n}+a_{2}x_{n}^2+\dots+a_{n}x_{n}^{n} = y_{n}$$</p>
 \end{bmatrix}
 $$</p>
 <p>y el vector de resultados</p>
-<p>$$
+<p>$$b=
 \begin{bmatrix}
 y_{0} \
 y_{1} \
-\vdots
+\vdots \
+y_{n}
 \end{bmatrix}
 $$</p>
-<p>En orden para que</p>
+<p>entonces de nuestro sistema de ecuaciones inicial tenemos</p>
+<p>$$AX=b$$
+$$
+\begin{bmatrix}
+1&amp;x_{0}&amp;x_{0}^2&amp;\dots&amp;x_{0}^n \
+1&amp;x_{1}&amp;x_{1}^2&amp;\dots&amp;x_{1}^n \
+\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp; \vdots\
+1&amp;x_{n}&amp;x_{n}^2&amp;\dots&amp;x_{n}^n
+\end{bmatrix}</p>
+<p>\begin{bmatrix}
+a_{0} \
+a_{1} \
+\vdots \
+a_{n}
+\end{bmatrix}</p>
+<p>=</p>
+<p>\begin{bmatrix}
+y_{0} \
+y_{1} \
+\vdots \
+y_{n}
+\end{bmatrix}</p>
+<p>$$
+En orden para que</p>
 <h1 class="heading" id="porque-lagrange-vs-mls">
   Porque Lagrange vs MLS
   <a class="anchor" href="#porque-lagrange-vs-mls">#</a>
