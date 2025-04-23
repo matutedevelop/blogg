@@ -354,13 +354,8 @@ es una contradiccion con el teorema fundamental del algebra y Con esto queda dem
 
 $$C_{r}\notin \text{span}(C_{r-1},C_{r-2},\dots,C_{0})~~~~0<r\leq n$$
 
-Con esto queda demostrado que 
 
-
-$$C_{r}\notin \text{span}(C_{r-1},C_{r-2},\dots,C_{0})~~~~0<r\leq n$$
-
-
-y que todos la columna $C_{r}$ de la matriz $A$ por definicion tienen que ser linealmente independiente a las columnas $C_{i-1},C_{i-2},\dots ,C_{0}$. Por lo tanto $\det(A)\neq 0$ y el sistema $AX=b$ tiene solucion unica. demostrando asi 
+y que todas la columna $C_{r}$ de la matriz $A$ por definicion tienen que ser linealmente independiente a las columnas $C_{r-1},C_{r-2},\dots ,C_{0}$. Por lo tanto $\det(A)\neq 0$ y el sistema $AX=b$ tiene solucion unica. demostrando asi el teorema 2.2
 
 
 #### 2.2.1.3 Polinomios de lagrange
@@ -376,6 +371,27 @@ un polinomio de grado $n+1$ con sus raices en $x_{j}$ si $j\neq i$
 $$
 l_{n,i}(x_{j}) = \prod_{\substack{j=0\\ j\neq i} }^n \frac{x_{j}-x_{j}}{x_{i}-x_{j}} = 0 
 $$
+
+
+ademas 
+
+$$
+l_{n,i}(x_{i}) = \prod_{\substack{j=0\\ j\neq i} }^n \frac{x_{i}-x_{j}}{x_{i}-x_{j}} = 1 
+$$
+
+Definiendo 
+$$L_{n}(x)= \sum_{i=0}^n y_{i}l_{n,i}(x)$$
+
+
+
+$$L_{n}(x_{i})=y_{i}$$ es el polinomio de grado menor o igual a $n$ que interpola en la sucesion de puntos $(x_{0},y_{0}),(x_{1},y_{1}),\dots(x_{n},y_{n})$
+
+##### Procedimiento
+
+para enciontrar el polinomio de lagrange dada por la sucesion de puntos, podemos utilizar el siguiente codigo 
+
+
+
 
 
 # Porque Lagrange vs MLS

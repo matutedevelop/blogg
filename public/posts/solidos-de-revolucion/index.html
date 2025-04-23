@@ -574,9 +574,7 @@ $$</p>
 <p>$$C_{r}\in \text{span}(C_{r-1},C_{r-2},\dots,C_{0})~~~~0&lt;r\leq n$$</p>
 <p>es una contradiccion con el teorema fundamental del algebra y Con esto queda demostrado que</p>
 <p>$$C_{r}\notin \text{span}(C_{r-1},C_{r-2},\dots,C_{0})~~~~0&lt;r\leq n$$</p>
-<p>Con esto queda demostrado que</p>
-<p>$$C_{r}\notin \text{span}(C_{r-1},C_{r-2},\dots,C_{0})~~~~0&lt;r\leq n$$</p>
-<p>y que todos la columna $C_{r}$ de la matriz $A$ por definicion tienen que ser linealmente independiente a las columnas $C_{i-1},C_{i-2},\dots ,C_{0}$. Por lo tanto $\det(A)\neq 0$ y el sistema $AX=b$ tiene solucion unica. demostrando asi</p>
+<p>y que todas la columna $C_{r}$ de la matriz $A$ por definicion tienen que ser linealmente independiente a las columnas $C_{r-1},C_{r-2},\dots ,C_{0}$. Por lo tanto $\det(A)\neq 0$ y el sistema $AX=b$ tiene solucion unica. demostrando asi el teorema 2.2</p>
 <h4 class="heading" id="2213-polinomios-de-lagrange">
   2.2.1.3 Polinomios de lagrange
   <a class="anchor" href="#2213-polinomios-de-lagrange">#</a>
@@ -589,6 +587,18 @@ $$</p>
 <p>$$
 l_{n,i}(x_{j}) = \prod_{\substack{j=0\ j\neq i} }^n \frac{x_{j}-x_{j}}{x_{i}-x_{j}} = 0
 $$</p>
+<p>ademas</p>
+<p>$$
+l_{n,i}(x_{i}) = \prod_{\substack{j=0\ j\neq i} }^n \frac{x_{i}-x_{j}}{x_{i}-x_{j}} = 1
+$$</p>
+<p>Definiendo
+$$L_{n}(x)= \sum_{i=0}^n y_{i}l_{n,i}(x)$$</p>
+<p>$$L_{n}(x_{i})=y_{i}$$ es el polinomio de grado menor o igual a $n$ que interpola en la sucesion de puntos $(x_{0},y_{0}),(x_{1},y_{1}),\dots(x_{n},y_{n})$</p>
+<h5 class="heading" id="procedimiento">
+  Procedimiento
+  <a class="anchor" href="#procedimiento">#</a>
+</h5>
+<p>para enciontrar el polinomio de lagrange dada por la sucesion de puntos, podemos utilizar el siguiente codigo</p>
 <h1 class="heading" id="porque-lagrange-vs-mls">
   Porque Lagrange vs MLS
   <a class="anchor" href="#porque-lagrange-vs-mls">#</a>
