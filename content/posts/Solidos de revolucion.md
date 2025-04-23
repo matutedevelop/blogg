@@ -32,7 +32,7 @@ El objetivo final de este proyecto es poder estimar el volumen de una botella de
 
 
 
-# 1. El volumen
+
 
 # 1.1 Como se calcula el volumen
 
@@ -48,11 +48,11 @@ El volumen surge antes de todo desarrollo matemático como una magnitud de inter
 Una excepción más que destacable de esta tendencia y fascinación griega por las figuras planas es Arquímedes. Que se destacó por sus descubrimientos de las relaciones entre volúmenes de diferentes cuerpos, como mejor ejemplo el descubrimiento de que *el volumen de la esfera es  $\frac{2}{3}$ la del cilindro en el que está inscrito.* Este descubrimiento le fascinaba tanto a Arquímedes que se tallaría en su tumba a su petición. Todos estos descubrimientos fueron hechos a través de su famoso método de exacción que en su formulación yace la idea esencial del cálculo integral y los infinitesimales. 
 
 
-Otro importante avance en la caracterización rigurosa de la noción de volumen fue dada por *Buenaventura Cavalieri*, que bajo su principio establecio que 
+Otro importante avance en la caracterización rigurosa de la noción de volumen fue dada por *Buenaventura Cavalieri*, que bajo su principio estableció que 
 
 No obstante las matemáticas no acatarían la noción de volumen hasta la formulación de la **teoría de la medida**. Esta teoría generaliza la noción de volumen para espacios y conjuntos en dimensiones superiores. La naturaleza de esta teoría es más del interés del análisis y la topología que de la de la geometría, no obstante resulta útil para la comprensión de nuestro cometido, pues enlaza de manera general la noción de integral con la de *volumen* o *medida*.
 
-> "La noción de medida es una generalización de las ideas de longitud, área o volumen. Como veremos, toda medida lleva además aparejada una correspondiente noción de Integral. "
+> "La noción de medida es una generalización de las ideas de longitud, área o volumen. Como veremos, toda medida lleva además aparejada una correspondiente noción de Integral."
 > - *José C. Sabina de Lis*  
 
 
@@ -64,14 +64,14 @@ Para entender como es que se calcula el volumen de cuerpos tridimensionales con 
 
 ## 2.1 Tomando puntos de muestreo de la botella
 
-Este paso consiste en obtener la materia prima con la que estaremos trabajando, apartir los resultados siguientes del proyecto se derivan de estos datos.
+Este paso consiste en obtener la materia prima con la que estaremos trabajando, a partir los resultados siguientes del proyecto se derivan de estos datos.
 
-Estos datos toman la forma de dos sucesiónes  $x_{0},x_{1},\dots,x_{n}$ y $y_{0},y_{1},\dots,y_{n}$  de donde $x_{i}$ es el largo de la botella apartir del cuello y   $y_{i}$ es el radio de la botella en $x_{i}$
+Estos datos toman la forma de dos sucesiones  $x_{0},x_{1},\dots,x_{n}$ y $y_{0},y_{1},\dots,y_{n}$ de donde $x_{i}$ es el largo de la botella a partir del cuello y   $y_{i}$ es el radio de la botella en $x_{i}$
 
 
 ### 2.1.1 Procedimiento
 
-Se desean obtener los puntos apartir de una botella de coca cola retornable de 355ml
+Se desean obtener los puntos partir de una botella de coca cola retornable de 355 ml
 
 !![Image Description](https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250420133506.png)
 
@@ -85,7 +85,7 @@ La idea es sencilla, por la forma en la que se calcula el volumen del sólido de
 
 ![[Solidos de revolucion 2025-04-20 13.22.51.excalidraw]]
 
-Entonces con ayuda de un bernier y una cinta metrica medimos el *diametro* de la botella a lo largo de 24 puntos equidistantes por 1cm, y atraves de la relacion del radio de la circunferencia con s diametro se obtuvo cada punto $y_{i}$
+Entonces con ayuda de un bernier y una cinta métrica medimos el *diámetro* de la botella a lo largo de 24 puntos equidistantes por 1 cm, y a través de la relación del radio de la circunferencia con su diámetro se obtuvo cada punto $y_{i}$
 
 $$
 r=y_{i}=\frac{d}{2}
@@ -111,7 +111,7 @@ Graficando se confirma efectivamente  asemejan la silueta de la botella partida 
 
 El siguiente paso es poder encontrar una curva que se asemeje a la de la botella. Debido a que se cuenta con una cantidad relativamente generosa de puntos, el primer método que intentamos es el de interpolación.
 
-### 2.2.1Interpolación
+### 2.2.1 Interpolación
 
 Interpolar quiere decir que para nuestros puntos $(x_{0},y_{0}),(x_{1},y_{1}),\dots(x_{n},y_{n})$ buscamos encontrar una función $f$ tal que $f(x_{i}) = y_{i}$. Debido a las bondades de los polinomios, en especial a la hora de la integración, buscamos que nuestra función interpoladora sea un polinomio.
 
@@ -225,20 +225,21 @@ x_{n}^i
 \end{bmatrix}^{\intercal}
 $$
 
-$$C_{i} \in \mathscr{L}(C_{j}),~~~~~~j\neq i$$
+$$C_{i} \in \text{span}(C_{j_{0}},C_{j_{2}},\dots,C_{j_{n}}),~~~~~~j_{i}\neq i$$
 
 
-donde $\mathscr{L}(u_{0},u_{1},\dots)$ es el *espacio de combinaciones lineales* de los vectores $u_{1},u_{2},\dots$
+donde $\text{span}(u_{0},u_{1},\dots)$ edos *espacio de combinaciones lineales* de los vectores $u_{1},u_{2},\dots$
 
 ---
+
 los vectores $C_{1},C_{2},\dots,C_{n}$ sean linealmente independientes implica que $\det(A)\neq 0$ que a su vez implica el postulado del teorema 2.2
 
 se desea demostrar por inducción que 
-$$C_{r} \notin \mathscr{L}(C_{s})~~~~ 0 \leq s < r \leq n$$
+$$C_{r} \notin \text{span}(C_{r-1},C_{r-2},\dots C_{0})~~~~ 0 \leq s < r \leq n$$
 
 **Caso base**
 
-$$C_{1} \notin \mathscr{L}(C_{0})$$
+$$C_{1} \notin \text{span}(C_{0})$$
 
 
 desde que $x_{0}<x_{1}<\dots x_{n}$
@@ -266,7 +267,7 @@ $$
 
 se asume 
 
-$$C_{r} \in \mathscr{L}(C_{s})~~~~ 0 \leq s < r \leq n$$
+$$C_{r} \in \text{span}(C_{r-1},C_{r-2},\dots,C_{0} )~~~~ 0 \leq s < r \leq n$$
 
 
 $$
@@ -291,8 +292,8 @@ b_{1}x_{n}
 \end{bmatrix}
 + \dots +
 \begin{bmatrix}
-b_{r-1}x_{n}^{r-1} \\
-b_{r-1}x_{n}^{r-1} \\
+b_{r-1}x_{0}^{r-1} \\
+b_{r-1}x_{1}^{r-1} \\
 \vdots \\
 b_{r-1}x_{n}^{r-1}
 \end{bmatrix}
@@ -325,8 +326,8 @@ b_{1}x_{n}
 \end{bmatrix}
 + \dots +
 \begin{bmatrix}
-b_{r-1}x_{n}^{r-1} \\
-b_{r-1}x_{n}^{r-1} \\
+b_{r-1}x_{0}^{r-1} \\
+b_{r-1}x_{1}^{r-1} \\
 \vdots \\
 b_{r-1}x_{n}^{r-1}
 \end{bmatrix}
@@ -348,7 +349,7 @@ x_{n}^r
 
 $$
 
-Igualando las sumas de los componentes se obtiene un polinomio $Q$ de la forma:
+Igualando las sumas de los componentes se obtiene un polinomio $Q$ que satisface que:
 
 $$
 
@@ -373,7 +374,14 @@ Por el *Teorema fundamental del álgebra* un polinomio de grado $m$ tiene a lo s
 En el mejor de los casos $r=n$, no obstante el polinomio $Q$ tiene $n+1$ raíces, lo que es una contradicción con el Teorema fundamental del algebra, por lo tanto 
 
 
-$$C_{r}\notin \mathscr{L}(C_{s})~~~~0\leq s<r\leq n$$
+
+Con esto queda demostrado que 
+
+
+$$C_{r}\notin \text{span}(C_{r-1},C_{r-2},\dots,C_{0})~~~~0<r\leq n$$
+
+
+y que todos la columna $C_{r}$ de la matriz $A$ por definicion tienen que ser linealmente independiente a las columnas $C_{i-1},C_{i-2},\dots ,C_{0}$. Por lo tanto $\det(A)\neq 0$ y el sistema $AX=b$ tiene solucion unica. demostrando asi 
 
 # Porque Lagrange vs MLS
 
