@@ -169,14 +169,46 @@ $$
 
 y el vector de resultados 
 
-$$
+$$b=
 \begin{bmatrix}
 y_{0} \\
 y_{1} \\
-\vdots
+\vdots \\
+y_{n}
 \end{bmatrix}
 $$
 
+entonces de nuestro sistema de ecuaciones inicial tenemos 
+
+
+$$AX=b$$
+$$
+\begin{bmatrix}
+1&x_{0}&x_{0}^2&\dots&x_{0}^n \\
+1&x_{1}&x_{1}^2&\dots&x_{1}^n \\
+\vdots&\vdots&\vdots&\ddots& \vdots\\
+ 1&x_{n}&x_{n}^2&\dots&x_{n}^n 
+\end{bmatrix}
+
+\begin{bmatrix}
+a_{0} \\
+a_{1} \\
+\vdots \\
+a_{n}
+\end{bmatrix}
+
+
+=
+
+\begin{bmatrix}
+y_{0} \\
+y_{1} \\
+\vdots \\
+y_{n}
+\end{bmatrix}
+
+
+$$
 En orden para que 
 
 
