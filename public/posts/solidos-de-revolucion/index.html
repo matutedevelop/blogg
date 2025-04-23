@@ -147,7 +147,7 @@
 
       
       &nbsp; · &nbsp;
-      7 min read
+      9 min read
       
     </p>
 
@@ -177,7 +177,7 @@
     </li>
     <li><a href="#22-ajustando-curva-a-los-puntos">2.2 Ajustando curva a los puntos</a>
       <ul>
-        <li><a href="#221interpolación">2.2.1Interpolación</a></li>
+        <li><a href="#221-interpolación">2.2.1 Interpolación</a></li>
       </ul>
     </li>
   </ul>
@@ -193,10 +193,6 @@
   <a class="anchor" href="#objetivo-del-proyecto">#</a>
 </h1>
 <p>El objetivo final de este proyecto es poder estimar el volumen de una botella de coca cola de 355 ml retornable solamente tomando del diámetro de la misma</p>
-<h1 class="heading" id="1-el-volumen">
-  1. El volumen
-  <a class="anchor" href="#1-el-volumen">#</a>
-</h1>
 <h1 class="heading" id="11-como-se-calcula-el-volumen">
   1.1 Como se calcula el volumen
   <a class="anchor" href="#11-como-se-calcula-el-volumen">#</a>
@@ -212,12 +208,12 @@
 </h3>
 <p>El volumen surge antes de todo desarrollo matemático como una magnitud de interés no solo en la física elemental, sino también para casi toda actividad humana. En todo momento interactuamos con objetos en nuestro espacio, que tienen <strong>volumen</strong>, tienen un contorno y un interior que no puede ser ocupado por ninguna otra cosa. El interés en la formulación de métodos para calcular esta magnitud es de evidente importancia para ramas como la ingeniería, la física, la Arquitectura o incluso la logística. No obstante en la antigüedad este desarrollo siempre se vería opacado por el desarrollo de la matemática de la geometría bidimensional y el cálculo de <em>Áreas</em> por parte de los griegos, que para sorpresa de nadie se trata del <em>volumen</em> (<strong>medida</strong>) en un espacio de una dimensión menor.</p>
 <p>Una excepción más que destacable de esta tendencia y fascinación griega por las figuras planas es Arquímedes. Que se destacó por sus descubrimientos de las relaciones entre volúmenes de diferentes cuerpos, como mejor ejemplo el descubrimiento de que <em>el volumen de la esfera es  $\frac{2}{3}$ la del cilindro en el que está inscrito.</em> Este descubrimiento le fascinaba tanto a Arquímedes que se tallaría en su tumba a su petición. Todos estos descubrimientos fueron hechos a través de su famoso método de exacción que en su formulación yace la idea esencial del cálculo integral y los infinitesimales.</p>
-<p>Otro importante avance en la caracterización rigurosa de la noción de volumen fue dada por <em>Buenaventura Cavalieri</em>, que bajo su principio establecio que</p>
+<p>Otro importante avance en la caracterización rigurosa de la noción de volumen fue dada por <em>Buenaventura Cavalieri</em>, que bajo su principio estableció que</p>
 <p>No obstante las matemáticas no acatarían la noción de volumen hasta la formulación de la <strong>teoría de la medida</strong>. Esta teoría generaliza la noción de volumen para espacios y conjuntos en dimensiones superiores. La naturaleza de esta teoría es más del interés del análisis y la topología que de la de la geometría, no obstante resulta útil para la comprensión de nuestro cometido, pues enlaza de manera general la noción de integral con la de <em>volumen</em> o <em>medida</em>.</p>
 <blockquote>
-<p>&ldquo;La noción de medida es una generalización de las ideas de longitud, área o volumen. Como veremos, toda medida lleva además aparejada una correspondiente noción de Integral. &quot;</p>
+<p>&ldquo;La noción de medida es una generalización de las ideas de longitud, área o volumen. Como veremos, toda medida lleva además aparejada una correspondiente noción de Integral.&rdquo;</p>
 <ul>
-<li><em>José C. Sabina de Lis</em> en</li>
+<li><em>José C. Sabina de Lis</em></li>
 </ul>
 </blockquote>
 <p>Para entender como es que se calcula el volumen de cuerpos tridimensionales con herramientas de cálculo de una variable es importante también entender la aparente de la situación</p>
@@ -229,13 +225,13 @@
   2.1 Tomando puntos de muestreo de la botella
   <a class="anchor" href="#21-tomando-puntos-de-muestreo-de-la-botella">#</a>
 </h2>
-<p>Este paso consiste en obtener la materia prima con la que estaremos trabajando, apartir los resultados siguientes del proyecto se derivan de estos datos.</p>
-<p>Estos datos toman la forma de dos sucesiónes  $x_{0},x_{1},\dots,x_{n}$ y $y_{0},y_{1},\dots,y_{n}$  de donde $x_{i}$ es el largo de la botella apartir del cuello y   $y_{i}$ es el radio de la botella en $x_{i}$</p>
+<p>Este paso consiste en obtener la materia prima con la que estaremos trabajando, a partir los resultados siguientes del proyecto se derivan de estos datos.</p>
+<p>Estos datos toman la forma de dos sucesiones  $x_{0},x_{1},\dots,x_{n}$ y $y_{0},y_{1},\dots,y_{n}$ de donde $x_{i}$ es el largo de la botella a partir del cuello y   $y_{i}$ es el radio de la botella en $x_{i}$</p>
 <h3 class="heading" id="211-procedimiento">
   2.1.1 Procedimiento
   <a class="anchor" href="#211-procedimiento">#</a>
 </h3>
-<p>Se desean obtener los puntos apartir de una botella de coca cola retornable de 355ml</p>
+<p>Se desean obtener los puntos partir de una botella de coca cola retornable de 355 ml</p>
 <p>!
 
 
@@ -259,7 +255,7 @@
 </p>
 <p>La idea es sencilla, por la forma en la que se calcula el volumen del sólido de revolución con el método de discos necesitamos que nuestro integrando sea una función que nos devuelva el radio de la botella a lo largo de longitud de la botella.</p>
 <p>![[Solidos de revolucion 2025-04-20 13.22.51.excalidraw]]</p>
-<p>Entonces con ayuda de un bernier y una cinta metrica medimos el <em>diametro</em> de la botella a lo largo de 24 puntos equidistantes por 1cm, y atraves de la relacion del radio de la circunferencia con s diametro se obtuvo cada punto $y_{i}$</p>
+<p>Entonces con ayuda de un bernier y una cinta métrica medimos el <em>diámetro</em> de la botella a lo largo de 24 puntos equidistantes por 1 cm, y a través de la relación del radio de la circunferencia con su diámetro se obtuvo cada punto $y_{i}$</p>
 <p>$$
 r=y_{i}=\frac{d}{2}
 $$</p>
@@ -361,28 +357,28 @@ $$</p>
   <a class="anchor" href="#22-ajustando-curva-a-los-puntos">#</a>
 </h2>
 <p>El siguiente paso es poder encontrar una curva que se asemeje a la de la botella. Debido a que se cuenta con una cantidad relativamente generosa de puntos, el primer método que intentamos es el de interpolación.</p>
-<h3 class="heading" id="221interpolación">
-  2.2.1Interpolación
-  <a class="anchor" href="#221interpolaci%c3%b3n">#</a>
+<h3 class="heading" id="221-interpolación">
+  2.2.1 Interpolación
+  <a class="anchor" href="#221-interpolaci%c3%b3n">#</a>
 </h3>
 <p>Interpolar quiere decir que para nuestros puntos $(x_{0},y_{0}),(x_{1},y_{1}),\dots(x_{n},y_{n})$ buscamos encontrar una función $f$ tal que $f(x_{i}) = y_{i}$. Debido a las bondades de los polinomios, en especial a la hora de la integración, buscamos que nuestra función interpoladora sea un polinomio.</p>
-<h4 class="heading" id="2212-teorema-de-aproximación-de-weirstrass">
-  2.2.1.2 Teorema de aproximación de Weirstrass
-  <a class="anchor" href="#2212-teorema-de-aproximaci%c3%b3n-de-weirstrass">#</a>
+<h4 class="heading" id="2211-teorema-de-aproximación-de-weirstrass">
+  2.2.1.1 Teorema de aproximación de Weirstrass
+  <a class="anchor" href="#2211-teorema-de-aproximaci%c3%b3n-de-weirstrass">#</a>
 </h4>
 <p>Si en lugar de contar con un número finito de puntos tuviéramos la curva exacta de la silueta de la coca-cola podría parecer que todo sería más sencillo, integraríamos dicha función y listo no es así? En realidad no es tan sencillo, si tuviéramos la función exacta de la silueta de la botella lo más probable es de que su expresión sería absurdamente complicada o de lleno no podría ser escrita como una composición de funciones <em>básicas</em> como son las funciones polinómicas, radicales, racionales o las trascendentales, es decir estaríamos ante una función no elemental.</p>
 <p>No obstante eso no es limitante para encontrar una función <em>sencilla</em> que nos sea útil y que se parezca mucho</p>
-<h5 class="heading" id="s-21mathbbtmathrmeoremadeaproximación--de-mathcalweirstrass">
-  $\S <del>2.1</del>~\mathbb{T}\mathrm{eorema<del>de</del>aproximación ~ de} \mathcal{~Weirstrass}$
-  <a class="anchor" href="#s-21mathbbtmathrmeoremadeaproximaci%c3%b3n--de-mathcalweirstrass">#</a>
+<h5 class="heading" id="s-space21spacespacemathbbtmathrmeoremaspace-despace-aproximación-space-de-mathcalweirstrass">
+  $\S \space2.1\space\space\mathbb{T}\mathrm{eorema\space de\space aproximación \space de} \mathcal{~Weirstrass}$
+  <a class="anchor" href="#s-space21spacespacemathbbtmathrmeoremaspace-despace-aproximaci%c3%b3n-space-de-mathcalweirstrass">#</a>
 </h5>
-<p>sea $f:[a,b] \to \mathbb{R}$ una función continua, entonces existe una sucesión de polinomios $P_{n}$ tal que $P_{n}$ <em>converge uniformemente</em> a $f$, o dicho de otra forma</p>
+<p>sea $f:[a,b] \to \mathbb{R}$ una función continua, entonces existe una sucesión de polinomios $P_{n}$ tal que $P_{n}$ <em>converge uniformemente</em> a $f$ , o dicho de otra forma</p>
 <p>$$\forall f \in C[a,b]~~ \exists(P_{n}):$$
 $$\lim P_{n} \to f $$</p>
 <p>Una consecuencia directa de este teorema es la de que nos podemos acercar a cualquier función continua en un intervalo cerrado de forma arbitraria. Gracias a este teorema sabemos que sin importar que tan pronunciada o complicada pueda ser la curva de una función continua, podemos aproximarnos a dicha función cuanto queramos con un polinomio. Esto es porque los polinomios son densos en el espacio $C[a,b]$.</p>
-<h4 class="heading" id="polinomios-interpoladores-del-grado-minimo">
-  Polinomios interpoladores del grado minimo
-  <a class="anchor" href="#polinomios-interpoladores-del-grado-minimo">#</a>
+<h4 class="heading" id="2212-polinomios-interpoladores-del-grado-mínimo">
+  2.2.1.2 Polinomios interpoladores del grado mínimo
+  <a class="anchor" href="#2212-polinomios-interpoladores-del-grado-m%c3%adnimo">#</a>
 </h4>
 <p>Los dos métodos más sencillos de entender para construir un polinomio son los polinomios de Lagrange o plantear una matriz de <em>Vandermonde</em></p>
 <p>Estos dos procedimientos son equivalentes, y de forma simbólica producen el mismo resultado. Un polinomio $P_{n}$ (<em>con grado menor o igual a $n$</em>).</p>
@@ -391,9 +387,10 @@ $$\lim P_{n} \to f $$</p>
   $\S~2.2~~\mathbb{T}\mathrm{eorema}$
   <a class="anchor" href="#s22mathbbtmathrmeorema">#</a>
 </h5>
-<p>existe un único polinomio $P_{n}$ de grado menor o igual a $n$ tal que $P_{n}(x_{i})=y_{i}$, $i=0,1,\dots,n$</p>
+<p>dada la sucesion de puntos $(x_{0},y_{0}),(x_{1},y_{1}),\dots,(x_{n,y_{n}})$ con $x_{0}&lt;x_{1}&lt;\dots&lt;x_{n}$
+existe un único polinomio $P_{n}$ de grado menor o igual a $n$ tal que $P_{n}(x_{i})=y_{i}$, $i=0,1,\dots,n$</p>
 <p>$$
-\exists!P \in \mathbb{R}^n[x]|P(x_{i}) = y_{i}, i=0,1,\dots,n
+\exists!P \in \mathbb{R}^n[x]:P(x_{i}) = y_{i}, i=0,1,\dots,n
 $$</p>
 <h6 class="heading" id="demostración">
   Demostración
@@ -443,9 +440,155 @@ y_{0} \
 y_{1} \
 \vdots \
 y_{n}
+\end{bmatrix}
+$$</p>
+<p>En orden para que el postulado del teorema se cumpla se necesita que el sistema tenga una única solución, es decir $\det(A)\neq 0$.</p>
+<p>Supongamos que $\det(A)=0$ esto implica que las columnas de la matriz $A$ no son <em>linealmente independientes</em>. Esto se puede expresar de la siguiente manera.</p>
+<p>Sea</p>
+<p>$$
+C_{i}=\begin{bmatrix}
+x_{0}^i &amp;
+x_{1}^i &amp;
+\dots &amp;
+x_{n}^i</p>
+<p>\end{bmatrix}^{\intercal}
+$$</p>
+<p>$$C_{i} \in \text{span}(C_{j_{0}},C_{j_{2}},\dots,C_{j_{n}}),~~~~~~j_{i}\neq i$$</p>
+<p>donde $\text{span}(u_{0},u_{1},\dots)$ edos <em>espacio de combinaciones lineales</em> de los vectores $u_{1},u_{2},\dots$</p>
+<hr>
+<p>Para demostrar que los vectores $C_{1},C_{2},\dots,C_{n}$ sean linealmente independientes basta con demostrar que $C_{r}\notin \text{span}(C_{r-1},\dots ,C_{0})$ implica que $\det(A)\neq 0$ que a su vez implica el postulado del teorema 2.2</p>
+<p>se desea entonces demostrar  que
+$$C_{r} \notin \text{span}(C_{r-1},C_{r-2},\dots C_{0})~~~~ 0 &lt; r \leq n$$</p>
+<p>supongamos que</p>
+<p>$$C_{r} \in \text{span}(C_{r-1},C_{r-2},\dots,C_{0} )~~~~ 0  &lt; r \leq n$$</p>
+<p>entonces $\exists b=(b_{0},b_{1},\dots,b_{r-1})$ tal que</p>
+<p>$$
+b_{0}C_{0}+b_{1}C_{1}+\dots+b_{r-1}C_{r-1} = C_{r}
+$$</p>
+<p>$$</p>
+<p>\begin{bmatrix}
+b_{0} \
+b_{0} \
+\vdots \
+b_{0}
+\end{bmatrix}
++
+\begin{bmatrix}
+b_{1}x_{0} \
+b_{1}x_{1} \
+\vdots \
+b_{1}x_{n}
+\end{bmatrix}</p>
+<ul>
+<li>\dots +
+\begin{bmatrix}
+b_{r-1}x_{0}^{r-1} \
+b_{r-1}x_{1}^{r-1} \
+\vdots \
+b_{r-1}x_{n}^{r-1}
+\end{bmatrix}</li>
+</ul>
+<p>=</p>
+<p>\begin{bmatrix}
+x_{0}^r \
+x_{1}^r \
+\vdots \
+x_{n}^r
 \end{bmatrix}</p>
 <p>$$</p>
-<p>En orden para que el postulado se cumpla</p>
+<p>$$</p>
+<p>\begin{bmatrix}
+b_{0} \
+b_{0} \
+\vdots \
+b_{0}
+\end{bmatrix}
++
+\begin{bmatrix}
+b_{1}x_{0} \
+b_{1}x_{1} \
+\vdots \
+b_{1}x_{n}
+\end{bmatrix}</p>
+<ul>
+<li>\dots +
+\begin{bmatrix}
+b_{r-1}x_{0}^{r-1} \
+b_{r-1}x_{1}^{r-1} \
+\vdots \
+b_{r-1}x_{n}^{r-1}
+<table>
+  <thead>
+      <tr>
+          <th>\end{bmatrix}</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>\begin{bmatrix}</td>
+      </tr>
+      <tr>
+          <td>x_{0}^r \</td>
+      </tr>
+      <tr>
+          <td>x_{1}^r \</td>
+      </tr>
+      <tr>
+          <td>\vdots \</td>
+      </tr>
+      <tr>
+          <td>x_{n}^r</td>
+      </tr>
+      <tr>
+          <td>\end{bmatrix}</td>
+      </tr>
+      <tr>
+          <td>=</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+</ul>
+<p>\begin{bmatrix}
+0 \
+0 \
+\vdots \
+0
+\end{bmatrix}</p>
+<p>$$</p>
+<p>Igualando las sumas de los componentes se obtiene un polinomio $Q$ que satisface que:</p>
+<p>$$</p>
+<p>Q(x_{0})=b_{0}+b_{1}x_{0}+b_{2}x_{0}^2+\dots+b_{r-1}x_{0}^{r-1}-x_{0}^r=0
+$$</p>
+<p>$$</p>
+<p>Q(x_{1})=b_{0}+b_{1}x_{1}+b_{2}x_{1}^2+\dots+b_{r-1}x_{1}^{r-1}-x_{1}^r = 0
+$$</p>
+<p>$$\vdots$$</p>
+<p>$$
+Q(x_{n})=b_{0}+b_{1}x_{n}+b_{2}x_{n}^2+\dots+b_{r-1}x_{n}^{r-1}-x_{n}^r = 0
+$$</p>
+<blockquote>
+<p>Por el <em>Teorema fundamental del álgebra</em> un polinomio de grado $m$ tiene a lo sumo $m$ raíces.</p>
+</blockquote>
+<p>En el mejor de los casos $r=n$, no obstante el polinomio $Q$ tiene $n+1$ raíces, lo que es una contradicción con el Teorema fundamental del algebra, por lo tanto</p>
+<p>$$C_{r}\in \text{span}(C_{r-1},C_{r-2},\dots,C_{0})~~~~0&lt;r\leq n$$</p>
+<p>es una contradiccion con el teorema fundamental del algebra y Con esto queda demostrado que</p>
+<p>$$C_{r}\notin \text{span}(C_{r-1},C_{r-2},\dots,C_{0})~~~~0&lt;r\leq n$$</p>
+<p>Con esto queda demostrado que</p>
+<p>$$C_{r}\notin \text{span}(C_{r-1},C_{r-2},\dots,C_{0})~~~~0&lt;r\leq n$$</p>
+<p>y que todos la columna $C_{r}$ de la matriz $A$ por definicion tienen que ser linealmente independiente a las columnas $C_{i-1},C_{i-2},\dots ,C_{0}$. Por lo tanto $\det(A)\neq 0$ y el sistema $AX=b$ tiene solucion unica. demostrando asi</p>
+<h4 class="heading" id="2213-polinomios-de-lagrange">
+  2.2.1.3 Polinomios de lagrange
+  <a class="anchor" href="#2213-polinomios-de-lagrange">#</a>
+</h4>
+<p>se define</p>
+<p>$$
+l_{n,i}(x) = \prod_{\substack{j=0\ j\neq i} }^n \frac{x-x_{j}}{x_{i}-x_{j}}
+$$</p>
+<p>un polinomio de grado $n+1$ con sus raices en $x_{j}$ si $j\neq i$</p>
+<p>$$
+l_{n,i}(x_{j}) = \prod_{\substack{j=0\ j\neq i} }^n \frac{x_{j}-x_{j}}{x_{i}-x_{j}} = 0
+$$</p>
 <h1 class="heading" id="porque-lagrange-vs-mls">
   Porque Lagrange vs MLS
   <a class="anchor" href="#porque-lagrange-vs-mls">#</a>

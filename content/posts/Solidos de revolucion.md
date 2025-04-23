@@ -115,16 +115,16 @@ El siguiente paso es poder encontrar una curva que se asemeje a la de la botella
 
 Interpolar quiere decir que para nuestros puntos $(x_{0},y_{0}),(x_{1},y_{1}),\dots(x_{n},y_{n})$ buscamos encontrar una función $f$ tal que $f(x_{i}) = y_{i}$. Debido a las bondades de los polinomios, en especial a la hora de la integración, buscamos que nuestra función interpoladora sea un polinomio.
 
-#### 2.2.1.2 Teorema de aproximación de Weirstrass
+#### 2.2.1.1 Teorema de aproximación de Weirstrass
 
 Si en lugar de contar con un número finito de puntos tuviéramos la curva exacta de la silueta de la coca-cola podría parecer que todo sería más sencillo, integraríamos dicha función y listo no es así? En realidad no es tan sencillo, si tuviéramos la función exacta de la silueta de la botella lo más probable es de que su expresión sería absurdamente complicada o de lleno no podría ser escrita como una composición de funciones *básicas* como son las funciones polinómicas, radicales, racionales o las trascendentales, es decir estaríamos ante una función no elemental.
 
 No obstante eso no es limitante para encontrar una función *sencilla* que nos sea útil y que se parezca mucho
 
-#####  $\S ~2.1~~\mathbb{T}\mathrm{eorema~de~aproximación ~ de} \mathcal{~Weirstrass}$
+#####  $\S \space2.1\space\space\mathbb{T}\mathrm{eorema\space de\space aproximación \space de} \mathcal{~Weirstrass}$
 
 
-sea $f:[a,b] \to \mathbb{R}$ una función continua, entonces existe una sucesión de polinomios $P_{n}$ tal que $P_{n}$ *converge uniformemente* a $f$, o dicho de otra forma 
+sea $f:[a,b] \to \mathbb{R}$ una función continua, entonces existe una sucesión de polinomios $P_{n}$ tal que $P_{n}$ *converge uniformemente* a $f$ , o dicho de otra forma 
 
 $$\forall f \in C[a,b]~~ \exists(P_{n}):$$
 $$\lim P_{n} \to f $$
@@ -132,7 +132,7 @@ $$\lim P_{n} \to f $$
 Una consecuencia directa de este teorema es la de que nos podemos acercar a cualquier función continua en un intervalo cerrado de forma arbitraria. Gracias a este teorema sabemos que sin importar que tan pronunciada o complicada pueda ser la curva de una función continua, podemos aproximarnos a dicha función cuanto queramos con un polinomio. Esto es porque los polinomios son densos en el espacio $C[a,b]$.
 
 
-#### Polinomios interpoladores del grado minimo
+#### 2.2.1.2 Polinomios interpoladores del grado mínimo
 
 Los dos métodos más sencillos de entender para construir un polinomio son los polinomios de Lagrange o plantear una matriz de *Vandermonde*
 
@@ -213,7 +213,7 @@ En orden para que el postulado del teorema se cumpla se necesita que el sistema 
 
 Supongamos que $\det(A)=0$ esto implica que las columnas de la matriz $A$ no son *linealmente independientes*. Esto se puede expresar de la siguiente manera.
 
-sea
+Sea
 
 $$
 C_{i}=\begin{bmatrix}
@@ -232,47 +232,21 @@ donde $\text{span}(u_{0},u_{1},\dots)$ edos *espacio de combinaciones lineales* 
 
 ---
 
-los vectores $C_{1},C_{2},\dots,C_{n}$ sean linealmente independientes implica que $\det(A)\neq 0$ que a su vez implica el postulado del teorema 2.2
+Para demostrar que los vectores $C_{1},C_{2},\dots,C_{n}$ sean linealmente independientes basta con demostrar que $C_{r}\notin \text{span}(C_{r-1},\dots ,C_{0})$ implica que $\det(A)\neq 0$ que a su vez implica el postulado del teorema 2.2
 
-se desea demostrar por inducción que 
-$$C_{r} \notin \text{span}(C_{r-1},C_{r-2},\dots C_{0})~~~~ 0 \leq s < r \leq n$$
-
-**Caso base**
-
-$$C_{1} \notin \text{span}(C_{0})$$
+se desea entonces demostrar  que 
+$$C_{r} \notin \text{span}(C_{r-1},C_{r-2},\dots C_{0})~~~~ 0 < r \leq n$$
 
 
-desde que $x_{0}<x_{1}<\dots x_{n}$
-$$
-\begin{bmatrix}
-x_{0} \\
-x_{1} \\
-\vdots \\
-x_{n}
-\end{bmatrix}
 
-\neq
+supongamos que 
 
-k
-\begin{bmatrix}
-1 \\
-1 \\
-\vdots \\
-1
-\end{bmatrix}
-~~~~ k\in \mathbb{R}
-$$
+$$C_{r} \in \text{span}(C_{r-1},C_{r-2},\dots,C_{0} )~~~~ 0  < r \leq n$$
 
-**Paso inductivo**
-
-se asume 
-
-$$C_{r} \in \text{span}(C_{r-1},C_{r-2},\dots,C_{0} )~~~~ 0 \leq s < r \leq n$$
-
+entonces $\exists b=(b_{0},b_{1},\dots,b_{r-1})$ tal que 
 
 $$
 b_{0}C_{0}+b_{1}C_{1}+\dots+b_{r-1}C_{r-1} = C_{r}
-
 $$
 
 $$
@@ -368,12 +342,17 @@ Q(x_{n})=b_{0}+b_{1}x_{n}+b_{2}x_{n}^2+\dots+b_{r-1}x_{n}^{r-1}-x_{n}^r = 0
 $$
 
 
-Por el *Teorema fundamental del álgebra* un polinomio de grado $m$ tiene a lo sumo $m$ raíces.
+> Por el *Teorema fundamental del álgebra* un polinomio de grado $m$ tiene a lo sumo $m$ raíces.
 
 
 En el mejor de los casos $r=n$, no obstante el polinomio $Q$ tiene $n+1$ raíces, lo que es una contradicción con el Teorema fundamental del algebra, por lo tanto 
 
+$$C_{r}\in \text{span}(C_{r-1},C_{r-2},\dots,C_{0})~~~~0<r\leq n$$
 
+es una contradiccion con el teorema fundamental del algebra y Con esto queda demostrado que 
+
+
+$$C_{r}\notin \text{span}(C_{r-1},C_{r-2},\dots,C_{0})~~~~0<r\leq n$$
 
 Con esto queda demostrado que 
 
@@ -382,6 +361,22 @@ $$C_{r}\notin \text{span}(C_{r-1},C_{r-2},\dots,C_{0})~~~~0<r\leq n$$
 
 
 y que todos la columna $C_{r}$ de la matriz $A$ por definicion tienen que ser linealmente independiente a las columnas $C_{i-1},C_{i-2},\dots ,C_{0}$. Por lo tanto $\det(A)\neq 0$ y el sistema $AX=b$ tiene solucion unica. demostrando asi 
+
+
+#### 2.2.1.3 Polinomios de lagrange
+
+se define 
+
+$$
+l_{n,i}(x) = \prod_{\substack{j=0\\ j\neq i} }^n \frac{x-x_{j}}{x_{i}-x_{j}} 
+$$
+
+un polinomio de grado $n+1$ con sus raices en $x_{j}$ si $j\neq i$
+
+$$
+l_{n,i}(x_{j}) = \prod_{\substack{j=0\\ j\neq i} }^n \frac{x_{j}-x_{j}}{x_{i}-x_{j}} = 0 
+$$
+
 
 # Porque Lagrange vs MLS
 
