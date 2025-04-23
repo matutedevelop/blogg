@@ -147,7 +147,7 @@
 
       
       &nbsp; · &nbsp;
-      5 min read
+      6 min read
       
     </p>
 
@@ -177,7 +177,7 @@
     </li>
     <li><a href="#22-ajustando-curva-a-los-puntos">2.2 Ajustando curva a los puntos</a>
       <ul>
-        <li><a href="#interpolación">Interpolación</a></li>
+        <li><a href="#221interpolación">2.2.1Interpolación</a></li>
       </ul>
     </li>
   </ul>
@@ -360,12 +360,68 @@ $$</p>
   2.2 Ajustando curva a los puntos
   <a class="anchor" href="#22-ajustando-curva-a-los-puntos">#</a>
 </h2>
-<p>El siguiente paso es poder encontrar una curva que se asemeje a la de la botella. Debido a que se cuenta con una cantidad relativamente generosa de puntos, el primer metodo que intentamos es el de interpolacion</p>
-<h3 class="heading" id="interpolación">
-  Interpolación
-  <a class="anchor" href="#interpolaci%c3%b3n">#</a>
+<p>El siguiente paso es poder encontrar una curva que se asemeje a la de la botella. Debido a que se cuenta con una cantidad relativamente generosa de puntos, el primer método que intentamos es el de interpolación.</p>
+<h3 class="heading" id="221interpolación">
+  2.2.1Interpolación
+  <a class="anchor" href="#221interpolaci%c3%b3n">#</a>
 </h3>
-<p>Interpolar quiere decir que para nuestros puntos $(x_{0},y_{0}),(x_{1},y_{1}),\dots(x_{n},y_{n})$ buscamos encontrar una funcion $f$ tal que $f(x_{i}) = y_{i}$</p>
+<p>Interpolar quiere decir que para nuestros puntos $(x_{0},y_{0}),(x_{1},y_{1}),\dots(x_{n},y_{n})$ buscamos encontrar una función $f$ tal que $f(x_{i}) = y_{i}$. Debido a las bondades de los polinomios, en especial a la hora de la integración, buscamos que nuestra función interpoladora sea un polinomio.</p>
+<h4 class="heading" id="2212-teorema-de-aproximación-de-weirstrass">
+  2.2.1.2 Teorema de aproximación de Weirstrass
+  <a class="anchor" href="#2212-teorema-de-aproximaci%c3%b3n-de-weirstrass">#</a>
+</h4>
+<p>Si en lugar de contar con un número finito de puntos tuviéramos la curva exacta de la silueta de la coca-cola podría parecer que todo sería más sencillo, integraríamos dicha función y listo no es así? En realidad no es tan sencillo, si tuviéramos la función exacta de la silueta de la botella lo más probable es de que su expresión sería absurdamente complicada o de lleno no podría ser escrita como una composición de funciones <em>básicas</em> como son las funciones polinómicas, radicales, racionales o las trascendentales, es decir estaríamos ante una función no elemental.</p>
+<p>No obstante eso no es limitante para encontrar una función <em>sencilla</em> que nos sea útil y que se parezca mucho</p>
+<h5 class="heading" id="s-21mathbbtmathrmeoremadeaproximación--de-mathcalweirstrass">
+  $\S <del>2.1</del>~\mathbb{T}\mathrm{eorema<del>de</del>aproximación ~ de} \mathcal{~Weirstrass}$
+  <a class="anchor" href="#s-21mathbbtmathrmeoremadeaproximaci%c3%b3n--de-mathcalweirstrass">#</a>
+</h5>
+<p>sea $f:[a,b] \to \mathbb{R}$ una función continua, entonces existe una sucesión de polinomios $P_{n}$ tal que $P_{n}$ <em>converge uniformemente</em> a $f$, o dicho de otra forma</p>
+<p>$$\forall f \in C[a,b]~~ \exists(P_{n}):$$
+$$\lim P_{n} \to f $$</p>
+<p>Una consecuencia directa de este teorema es la de que nos podemos acercar a cualquier función continua en un intervalo cerrado de forma arbitraria. Gracias a este teorema sabemos que sin importar que tan pronunciada o complicada pueda ser la curva de una función continua, podemos aproximarnos a dicha función cuanto queramos con un polinomio. Esto es porque los polinomios son densos en el espacio $C[a,b]$.</p>
+<h4 class="heading" id="polinomios-interpoladores-del-grado-minimo">
+  Polinomios interpoladores del grado minimo
+  <a class="anchor" href="#polinomios-interpoladores-del-grado-minimo">#</a>
+</h4>
+<p>Los dos métodos más sencillos de entender para construir un polinomio son los polinomios de Lagrange o plantear una matriz de <em>Vandermonde</em></p>
+<p>Estos dos procedimientos son equivalentes, y de forma simbólica producen el mismo resultado. Un polinomio $P_{n}$ (<em>con grado menor o igual a $n$</em>).</p>
+<p>Esto es una consecuencia del siguiente teorema</p>
+<h5 class="heading" id="s22mathbbtmathrmeorema">
+  $\S~2.2~~\mathbb{T}\mathrm{eorema}$
+  <a class="anchor" href="#s22mathbbtmathrmeorema">#</a>
+</h5>
+<p>existe un único polinomio $P_{n}$ de grado menor o igual a $n$ tal que $P_{n}(x_{i})=y_{i}$, $i=0,1,\dots,n$</p>
+<p>$$
+\exists!P \in \mathbb{R}^n[x]|P(x_{i}) = y_{i}, i=0,1,\dots,n
+$$</p>
+<h6 class="heading" id="demostración">
+  Demostración
+  <a class="anchor" href="#demostraci%c3%b3n">#</a>
+</h6>
+<p>si $P$ existe entonces se tiene que
+$$P(x_{0})=a_{0}+a_{1}x_{0}+a_{2}x_{0}^2+\dots+a_{n}x_{0}^{n} = y_{0}$$
+$$P(x_{1})=a_{0}+a_{1}x_{1}+a_{2}x_{1}^2+\dots+a_{n}x_{1}^{n} = y_{1}$$
+$$\vdots$$
+$$P(x_{n})=a_{0}+a_{1}x_{n}+a_{2}x_{n}^2+\dots+a_{n}x_{n}^{n} = y_{n}$$</p>
+<p>de dode se tiene la matriz caracteristica</p>
+<p>$$A=
+\begin{bmatrix}
+1&amp;x_{0}&amp;x_{0}^2&amp;\dots&amp;x_{0}^n \
+1&amp;x_{1}&amp;x_{1}^2&amp;\dots&amp;x_{1}^n \
+\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp; \vdots\
+1&amp;x_{n}&amp;x_{n}^2&amp;\dots&amp;x_{n}^n
+\end{bmatrix}
+$$</p>
+<p>y el vector de resultados</p>
+<p>$$
+\begin{bmatrix}
+y_{0} \
+y_{1} \
+\vdots
+\end{bmatrix}
+$$</p>
+<p>En orden para que</p>
 <h1 class="heading" id="porque-lagrange-vs-mls">
   Porque Lagrange vs MLS
   <a class="anchor" href="#porque-lagrange-vs-mls">#</a>

@@ -109,11 +109,78 @@ Graficando se confirma efectivamente  asemejan la silueta de la botella partida 
 
 ## 2.2 Ajustando curva a los puntos
 
-El siguiente paso es poder encontrar una curva que se asemeje a la de la botella. Debido a que se cuenta con una cantidad relativamente generosa de puntos, el primer metodo que intentamos es el de interpolacion
+El siguiente paso es poder encontrar una curva que se asemeje a la de la botella. Debido a que se cuenta con una cantidad relativamente generosa de puntos, el primer método que intentamos es el de interpolación.
 
-### Interpolación
+### 2.2.1Interpolación
 
-Interpolar quiere decir que para nuestros puntos $(x_{0},y_{0}),(x_{1},y_{1}),\dots(x_{n},y_{n})$ buscamos encontrar una funcion $f$ tal que $f(x_{i}) = y_{i}$
+Interpolar quiere decir que para nuestros puntos $(x_{0},y_{0}),(x_{1},y_{1}),\dots(x_{n},y_{n})$ buscamos encontrar una función $f$ tal que $f(x_{i}) = y_{i}$. Debido a las bondades de los polinomios, en especial a la hora de la integración, buscamos que nuestra función interpoladora sea un polinomio.
+
+#### 2.2.1.2 Teorema de aproximación de Weirstrass
+
+Si en lugar de contar con un número finito de puntos tuviéramos la curva exacta de la silueta de la coca-cola podría parecer que todo sería más sencillo, integraríamos dicha función y listo no es así? En realidad no es tan sencillo, si tuviéramos la función exacta de la silueta de la botella lo más probable es de que su expresión sería absurdamente complicada o de lleno no podría ser escrita como una composición de funciones *básicas* como son las funciones polinómicas, radicales, racionales o las trascendentales, es decir estaríamos ante una función no elemental.
+
+No obstante eso no es limitante para encontrar una función *sencilla* que nos sea útil y que se parezca mucho
+
+#####  $\S ~2.1~~\mathbb{T}\mathrm{eorema~de~aproximación ~ de} \mathcal{~Weirstrass}$
+
+
+sea $f:[a,b] \to \mathbb{R}$ una función continua, entonces existe una sucesión de polinomios $P_{n}$ tal que $P_{n}$ *converge uniformemente* a $f$, o dicho de otra forma 
+
+$$\forall f \in C[a,b]~~ \exists(P_{n}):$$
+$$\lim P_{n} \to f $$
+
+Una consecuencia directa de este teorema es la de que nos podemos acercar a cualquier función continua en un intervalo cerrado de forma arbitraria. Gracias a este teorema sabemos que sin importar que tan pronunciada o complicada pueda ser la curva de una función continua, podemos aproximarnos a dicha función cuanto queramos con un polinomio. Esto es porque los polinomios son densos en el espacio $C[a,b]$.
+
+
+#### Polinomios interpoladores del grado minimo
+
+Los dos métodos más sencillos de entender para construir un polinomio son los polinomios de Lagrange o plantear una matriz de *Vandermonde*
+
+Estos dos procedimientos son equivalentes, y de forma simbólica producen el mismo resultado. Un polinomio $P_{n}$ (*con grado menor o igual a $n$*).
+
+Esto es una consecuencia del siguiente teorema
+
+##### $\S~2.2~~\mathbb{T}\mathrm{eorema}$
+
+existe un único polinomio $P_{n}$ de grado menor o igual a $n$ tal que $P_{n}(x_{i})=y_{i}$, $i=0,1,\dots,n$
+
+$$
+\exists!P \in \mathbb{R}^n[x]|P(x_{i}) = y_{i}, i=0,1,\dots,n
+$$
+
+###### Demostración
+
+si $P$ existe entonces se tiene que
+$$P(x_{0})=a_{0}+a_{1}x_{0}+a_{2}x_{0}^2+\dots+a_{n}x_{0}^{n} = y_{0}$$
+$$P(x_{1})=a_{0}+a_{1}x_{1}+a_{2}x_{1}^2+\dots+a_{n}x_{1}^{n} = y_{1}$$
+$$\vdots$$
+$$P(x_{n})=a_{0}+a_{1}x_{n}+a_{2}x_{n}^2+\dots+a_{n}x_{n}^{n} = y_{n}$$
+
+de dode se tiene la matriz caracteristica
+
+$$A=
+\begin{bmatrix}
+1&x_{0}&x_{0}^2&\dots&x_{0}^n \\
+1&x_{1}&x_{1}^2&\dots&x_{1}^n \\
+\vdots&\vdots&\vdots&\ddots& \vdots\\
+ 1&x_{n}&x_{n}^2&\dots&x_{n}^n 
+\end{bmatrix}
+$$
+
+y el vector de resultados 
+
+$$
+\begin{bmatrix}
+y_{0} \\
+y_{1} \\
+\vdots
+\end{bmatrix}
+$$
+
+En orden para que 
+
+
+
 
 
 # Porque Lagrange vs MLS
