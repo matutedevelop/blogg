@@ -209,7 +209,9 @@ y_{n}
 
 
 $$
-En orden para que 
+
+
+En orden para que el postulado se cumpla 
 
 
 
