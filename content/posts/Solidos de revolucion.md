@@ -53,7 +53,7 @@ Otro importante avance en la caracterización rigurosa de la noción de volumen 
 No obstante las matemáticas no acatarían la noción de volumen hasta la formulación de la **teoría de la medida**. Esta teoría generaliza la noción de volumen para espacios y conjuntos en dimensiones superiores. La naturaleza de esta teoría es más del interés del análisis y la topología que de la de la geometría, no obstante resulta útil para la comprensión de nuestro cometido, pues enlaza de manera general la noción de integral con la de *volumen* o *medida*.
 
 > "La noción de medida es una generalización de las ideas de longitud, área o volumen. Como veremos, toda medida lleva además aparejada una correspondiente noción de Integral. "
-> - *José C. Sabina de Lis* en 
+> - *José C. Sabina de Lis*  
 
 
 Para entender como es que se calcula el volumen de cuerpos tridimensionales con herramientas de cálculo de una variable es importante también entender la aparente de la situación 
@@ -142,10 +142,11 @@ Esto es una consecuencia del siguiente teorema
 
 ##### $\S~2.2~~\mathbb{T}\mathrm{eorema}$
 
-existe un único polinomio $P_{n}$ de grado menor o igual a $n$ tal que $P_{n}(x_{i})=y_{i}$, $i=0,1,\dots,n$
+dada la sucesion de puntos $(x_{0},y_{0}),(x_{1},y_{1}),\dots,(x_{n,y_{n}})$ con $x_{0}<x_{1}<\dots<x_{n}$
+existe un único polinomio $P_{n}$ de grado menor o igual a $n$ tal que $P_{n}(x_{i})=y_{i}$, $i=0,1,\dots,n$ 
 
 $$
-\exists!P \in \mathbb{R}^n[x]|P(x_{i}) = y_{i}, i=0,1,\dots,n
+\exists!P \in \mathbb{R}^n[x]:P(x_{i}) = y_{i}, i=0,1,\dots,n
 $$
 
 ###### Demostración
@@ -197,7 +198,6 @@ a_{1} \\
 a_{n}
 \end{bmatrix}
 
-
 =
 
 \begin{bmatrix}
@@ -206,16 +206,174 @@ y_{1} \\
 \vdots \\
 y_{n}
 \end{bmatrix}
-
-
 $$
 
 
-En orden para que el postulado se cumpla 
+En orden para que el postulado del teorema se cumpla se necesita que el sistema tenga una única solución, es decir $\det(A)\neq 0$.
+
+Supongamos que $\det(A)=0$ esto implica que las columnas de la matriz $A$ no son *linealmente independientes*. Esto se puede expresar de la siguiente manera.
+
+sea
+
+$$
+C_{i}=\begin{bmatrix}
+x_{0}^i &
+x_{1}^i &
+\dots &
+x_{n}^i
+
+\end{bmatrix}^{\intercal}
+$$
+
+$$C_{i} \in \mathscr{L}(C_{j}),~~~~~~j\neq i$$
 
 
+donde $\mathscr{L}(u_{0},u_{1},\dots)$ es el *espacio de combinaciones lineales* de los vectores $u_{1},u_{2},\dots$
+
+---
+los vectores $C_{1},C_{2},\dots,C_{n}$ sean linealmente independientes implica que $\det(A)\neq 0$ que a su vez implica el postulado del teorema 2.2
+
+se desea demostrar por inducción que 
+$$C_{r} \notin \mathscr{L}(C_{s})~~~~ 0 \leq s < r \leq n$$
+
+**Caso base**
+
+$$C_{1} \notin \mathscr{L}(C_{0})$$
 
 
+desde que $x_{0}<x_{1}<\dots x_{n}$
+$$
+\begin{bmatrix}
+x_{0} \\
+x_{1} \\
+\vdots \\
+x_{n}
+\end{bmatrix}
+
+\neq
+
+k
+\begin{bmatrix}
+1 \\
+1 \\
+\vdots \\
+1
+\end{bmatrix}
+~~~~ k\in \mathbb{R}
+$$
+
+**Paso inductivo**
+
+se asume 
+
+$$C_{r} \in \mathscr{L}(C_{s})~~~~ 0 \leq s < r \leq n$$
+
+
+$$
+b_{0}C_{0}+b_{1}C_{1}+\dots+b_{r-1}C_{r-1} = C_{r}
+
+$$
+
+$$
+
+\begin{bmatrix}
+b_{0} \\
+b_{0} \\
+\vdots \\
+b_{0}
+\end{bmatrix}
++
+\begin{bmatrix}
+b_{1}x_{0} \\
+b_{1}x_{1} \\
+\vdots \\
+b_{1}x_{n}
+\end{bmatrix}
++ \dots +
+\begin{bmatrix}
+b_{r-1}x_{n}^{r-1} \\
+b_{r-1}x_{n}^{r-1} \\
+\vdots \\
+b_{r-1}x_{n}^{r-1}
+\end{bmatrix}
+
+=
+
+\begin{bmatrix}
+x_{0}^r \\
+x_{1}^r \\
+\vdots \\
+x_{n}^r
+\end{bmatrix}
+
+$$
+
+$$
+
+\begin{bmatrix}
+b_{0} \\
+b_{0} \\
+\vdots \\
+b_{0}
+\end{bmatrix}
++
+\begin{bmatrix}
+b_{1}x_{0} \\
+b_{1}x_{1} \\
+\vdots \\
+b_{1}x_{n}
+\end{bmatrix}
++ \dots +
+\begin{bmatrix}
+b_{r-1}x_{n}^{r-1} \\
+b_{r-1}x_{n}^{r-1} \\
+\vdots \\
+b_{r-1}x_{n}^{r-1}
+\end{bmatrix}
+-
+\begin{bmatrix}
+x_{0}^r \\
+x_{1}^r \\
+\vdots \\
+x_{n}^r
+\end{bmatrix}
+=
+
+\begin{bmatrix}
+0 \\
+0 \\
+\vdots \\
+0
+\end{bmatrix}
+
+$$
+
+Igualando las sumas de los componentes se obtiene un polinomio $Q$ de la forma:
+
+$$
+
+Q(x_{0})=b_{0}+b_{1}x_{0}+b_{2}x_{0}^2+\dots+b_{r-1}x_{0}^{r-1}-x_{0}^r=0
+$$
+
+$$
+
+Q(x_{1})=b_{0}+b_{1}x_{1}+b_{2}x_{1}^2+\dots+b_{r-1}x_{1}^{r-1}-x_{1}^r = 0
+$$
+
+$$\vdots$$
+
+$$
+Q(x_{n})=b_{0}+b_{1}x_{n}+b_{2}x_{n}^2+\dots+b_{r-1}x_{n}^{r-1}-x_{n}^r = 0
+$$
+
+
+Por el *Teorema fundamental del álgebra* un polinomio de grado $m$ tiene a lo sumo $m$ raíces.
+
+
+En el mejor de los casos $r=n$, no obstante el polinomio $Q$ tiene $n+1$ raíces, lo que es una contradicción con el Teorema fundamental del algebra, por lo tanto 
+
+
+$$C_{r}\notin \mathscr{L}(C_{s})~~~~0\leq s<r\leq n$$
 
 # Porque Lagrange vs MLS
 
