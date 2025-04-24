@@ -27,7 +27,7 @@ hideBackToTop: false
 
 # Objetivo del proyecto
 
-El objetivo final de este proyecto es poder estimar el volumen de una botella de coca cola de 355 ml retornable solamente tomando del diámetro de la misma
+El objetivo final de este proyecto es poder estimar el volumen de una botella de coca cola de 355 ml retornable solamente tomando muestras  del diámetro de la misma
 
 
 
@@ -68,10 +68,12 @@ Este paso consiste en obtener la materia prima con la que estaremos trabajando, 
 
 Estos datos toman la forma de dos sucesiones  $x_{0},x_{1},\dots,x_{n}$ y $y_{0},y_{1},\dots,y_{n}$ de donde $x_{i}$ es el largo de la botella a partir del cuello y   $y_{i}$ es el radio de la botella en $x_{i}$
 
+Apartir de aqui a los puntos $(x_{i},y_{i})$ se les denominara *nodos*
+
 
 ### 2.1.1 Procedimiento
 
-Se desean obtener los puntos partir de una botella de coca cola retornable de 355 ml
+Se desean obtener los nodos a partir de una botella de coca cola retornable de 355 ml
 
 !![Image Description](https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250420133506.png)
 
@@ -85,7 +87,7 @@ La idea es sencilla, por la forma en la que se calcula el volumen del sólido de
 
 ![[Solidos de revolucion 2025-04-20 13.22.51.excalidraw]]
 
-Entonces con ayuda de un bernier y una cinta métrica medimos el *diámetro* de la botella a lo largo de 24 puntos equidistantes por 1 cm, y a través de la relación del radio de la circunferencia con su diámetro se obtuvo cada punto $y_{i}$
+Entonces con ayuda de un bernier y una cinta métrica medimos el *diámetro* de la botella a lo largo de 24 nodos equidistantes por 1 cm, y a través de la relación del radio de la circunferencia con su diámetro se obtuvo cada punto $y_{i}$
 
 $$
 r=y_{i}=\frac{d}{2}
@@ -107,17 +109,14 @@ Graficando se confirma efectivamente  asemejan la silueta de la botella partida 
 ![[Pasted image 20250420131758.png|1000]]
 
 
-## 2.2 Ajustando curva a los puntos
+## 2.2 Ajustando curva a los nodos
 
-El siguiente paso es poder encontrar una curva que se asemeje a la de la botella. Debido a que se cuenta con una cantidad relativamente generosa de puntos, el primer método que intentamos es el de interpolación.
+El siguiente paso es poder encontrar una curva que se asemeje a la de la botella. Debido a que se cuenta con una cantidad relativamente generosa de nodos, el primer método que intentamos es el de interpolación.
 
-### 2.2.1 Interpolación
 
-Interpolar quiere decir que para nuestros puntos $(x_{0},y_{0}),(x_{1},y_{1}),\dots(x_{n},y_{n})$ buscamos encontrar una función $f$ tal que $f(x_{i}) = y_{i}$. Debido a las bondades de los polinomios, en especial a la hora de la integración, buscamos que nuestra función interpoladora sea un polinomio.
+#### 2.2.1 Teorema de aproximación de Weirstrass
 
-#### 2.2.1.1 Teorema de aproximación de Weirstrass
-
-Si en lugar de contar con un número finito de puntos tuviéramos la curva exacta de la silueta de la coca-cola podría parecer que todo sería más sencillo, integraríamos dicha función y listo no es así? En realidad no es tan sencillo, si tuviéramos la función exacta de la silueta de la botella lo más probable es de que su expresión sería absurdamente complicada o de lleno no podría ser escrita como una composición de funciones *básicas* como son las funciones polinómicas, radicales, racionales o las trascendentales, es decir estaríamos ante una función no elemental.
+Si en lugar de contar con un número finito de nodos tuviéramos la curva exacta de la silueta de la coca-cola podría parecer que todo sería más sencillo, integraríamos dicha función y listo no es así? En realidad no es tan sencillo, si tuviéramos la función exacta de la silueta de la botella lo más probable es de que su expresión sería absurdamente complicada o de lleno no podría ser escrita como una composición de funciones *básicas* como son las funciones polinómicas, radicales, racionales o las trascendentales, es decir estaríamos ante una función no elemental.
 
 No obstante eso no es limitante para encontrar una función *sencilla* que nos sea útil y que se parezca mucho
 
@@ -126,13 +125,20 @@ No obstante eso no es limitante para encontrar una función *sencilla* que nos s
 
 sea $f:[a,b] \to \mathbb{R}$ una función continua, entonces existe una sucesión de polinomios $P_{n}$ tal que $P_{n}$ *converge uniformemente* a $f$ , o dicho de otra forma 
 
-$$\forall f \in C[a,b]~~ \exists(P_{n}):$$
+$$\forall f \in C[a,b]~~ \exists (P_{n}):$$
 $$\lim P_{n} \to f $$
 
 Una consecuencia directa de este teorema es la de que nos podemos acercar a cualquier función continua en un intervalo cerrado de forma arbitraria. Gracias a este teorema sabemos que sin importar que tan pronunciada o complicada pueda ser la curva de una función continua, podemos aproximarnos a dicha función cuanto queramos con un polinomio. Esto es porque los polinomios son densos en el espacio $C[a,b]$.
 
 
-#### 2.2.1.2 Polinomios interpoladores del grado mínimo
+###  2.2.2 Interpolación (*Opcion 1*)
+
+Interpolar quiere decir que para nuestros nodos $(x_{0},y_{0}),(x_{1},y_{1}),\dots(x_{n},y_{n})$ buscamos encontrar una función $f$ tal que $f(x_{i}) = y_{i}$. Debido a las bondades de los polinomios, en especial a la hora de la integración, buscamos que nuestra función interpoladora sea un polinomio.
+
+
+
+
+#### 2.2.2.2 Polinomios interpoladores del grado mínimo
 
 Los dos métodos más sencillos de entender para construir un polinomio son los polinomios de Lagrange o plantear una matriz de *Vandermonde*
 
@@ -142,7 +148,7 @@ Esto es una consecuencia del siguiente teorema
 
 ##### $\S~2.2~~\mathbb{T}\mathrm{eorema}$
 
-dada la sucesion de puntos $(x_{0},y_{0}),(x_{1},y_{1}),\dots,(x_{n,y_{n}})$ con $x_{0}<x_{1}<\dots<x_{n}$
+dada la sucesion de nodos $(x_{0},y_{0}),(x_{1},y_{1}),\dots,(x_{n,y_{n}})$ con $x_{0}<x_{1}<\dots<x_{n}$
 existe un único polinomio $P_{n}$ de grado menor o igual a $n$ tal que $P_{n}(x_{i})=y_{i}$, $i=0,1,\dots,n$ 
 
 $$
@@ -157,7 +163,7 @@ $$P(x_{1})=a_{0}+a_{1}x_{1}+a_{2}x_{1}^2+\dots+a_{n}x_{1}^{n} = y_{1}$$
 $$\vdots$$
 $$P(x_{n})=a_{0}+a_{1}x_{n}+a_{2}x_{n}^2+\dots+a_{n}x_{n}^{n} = y_{n}$$
 
-de dode se tiene la matriz caracteristica
+de donde se tiene la matriz característica
 
 $$A=
 \begin{bmatrix}
@@ -323,7 +329,7 @@ x_{n}^r
 
 $$
 
-Igualando las sumas de los componentes se obtiene un polinomio $Q$ que satisface que:
+Igualando las sumas de los componentes se obtiene un polinomio $Q$ de grado $n$ que satisface que:
 
 $$
 
@@ -345,20 +351,20 @@ $$
 > Por el *Teorema fundamental del álgebra* un polinomio de grado $m$ tiene a lo sumo $m$ raíces.
 
 
-En el mejor de los casos $r=n$, no obstante el polinomio $Q$ tiene $n+1$ raíces, lo que es una contradicción con el Teorema fundamental del algebra, por lo tanto 
+En el mejor de los casos $r=n$, no obstante el polinomio $Q$ tiene $n+1$ raíces, lo que es una contradicción con el Teorema fundamental del álgebra, por lo tanto, 
 
 $$C_{r}\in \text{span}(C_{r-1},C_{r-2},\dots,C_{0})~~~~0<r\leq n$$
 
-es una contradiccion con el teorema fundamental del algebra y Con esto queda demostrado que 
+es una contradicción con el teorema fundamental del álgebra y Con esto queda demostrado que 
 
 
-$$C_{r}\notin \text{span}(C_{r-1},C_{r-2},\dots,C_{0})~~~~0<r\leq n$$
+$$C_{r}\notin \text{span}(C_{r-1},C_{r-2},\dots,C_{0})~~0<r\leq n$$
 
 
-y que todas la columna $C_{r}$ de la matriz $A$ por definicion tienen que ser linealmente independiente a las columnas $C_{r-1},C_{r-2},\dots ,C_{0}$. Por lo tanto $\det(A)\neq 0$ y el sistema $AX=b$ tiene solucion unica. demostrando asi el teorema 2.2
+Y que toda la columna $C_{r}$ de la matriz $A$ por definición tienen que ser linealmente independiente a las columnas $C_{r-1},C_{r-2},\dots ,C_{0}$. Por lo tanto, $\det(A)\neq 0$ y el sistema $AX=b$ tiene solución única. Demostrando así el teorema 2.2
 
 
-#### 2.2.1.3 Polinomios de lagrange
+#### 2.2.2.3 Polinomios de Lagrange
 
 se define 
 
@@ -366,14 +372,14 @@ $$
 l_{n,i}(x) = \prod_{\substack{j=0\\ j\neq i} }^n \frac{x-x_{j}}{x_{i}-x_{j}} 
 $$
 
-un polinomio de grado $n+1$ con sus raices en $x_{j}$ si $j\neq i$
+un polinomio de grado $n+1$ con sus raíces en $x_{j}$ si $j\neq i$
 
 $$
 l_{n,i}(x_{j}) = \prod_{\substack{j=0\\ j\neq i} }^n \frac{x_{j}-x_{j}}{x_{i}-x_{j}} = 0 
 $$
 
 
-ademas 
+además 
 
 $$
 l_{n,i}(x_{i}) = \prod_{\substack{j=0\\ j\neq i} }^n \frac{x_{i}-x_{j}}{x_{i}-x_{j}} = 1 
@@ -382,19 +388,59 @@ $$
 Definiendo 
 $$L_{n}(x)= \sum_{i=0}^n y_{i}l_{n,i}(x)$$
 
+$$L_{n}(x_{i})= y_{0}l_{n,0}(x_{i})+y_{1}l_{n,1}(x_{i})+\dots+y_{i}l_{n,i}(x_{i})+\dots+ y_{n}l_{n,n}(x_{i})$$
 
-
-$$L_{n}(x_{i})=y_{i}$$ es el polinomio de grado menor o igual a $n$ que interpola en la sucesion de puntos $(x_{0},y_{0}),(x_{1},y_{1}),\dots(x_{n},y_{n})$
+$$L_{n}(x_{i})=y_{i}$$ 
+es el polinomio de grado menor o igual a $n$ que interpola en la sucesión de nodos $(x_{0},y_{0}),(x_{1},y_{1}),\dots(x_{n},y_{n})$
 
 ##### Procedimiento
 
-para enciontrar el polinomio de lagrange dada por la sucesion de puntos, podemos utilizar el siguiente codigo 
+para encontrar el polinomio de Lagrange dada por la sucesión de nodos, podemos utilizar el siguiente código 
+
+```python
+import scipy as sc
+
+poly = sc.interpolate.lagrange(x_i,y_i)
+
+```
+
+que nos regresa una instancia de la clase `polynomial` que es nuestra función.Graficando el polinomio se tiene el siguiente ajuste.
+
+!![Image Description](https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250423125609.png)
 
 
+El ajuste en general no es bueno, y partir de ciertos nodos el polinomio parece que ya no interpola los nodos correspondientes. La hipótesis es que coeficientes del polinomio no pueden ser obtenidos correctamente por el procedimiento previo debido a las limitaciones que tienen las computadoras con las operaciones de punto flotante. Lo que provoca que el polinomio devuelto por la función sea diferente al verdadero polinomio de Lagrange. 
+
+Otra razón por la cual podríamos estar ocurriendo esto es por la elección de nodos y el número de nodos. Al tener 25 nodos de interpolación el polinomio resultante es de grado 25, lo que causa que pueda crecer o decrecer muy rápido en intervalos pequeños. En cuanto la elección de nodos si los nodos son equidistantes el efecto *runge* sé magnífica. 
+
+###### Efecto runge 
+
+El efecto runge es un fenómeno común cuando se hace aproximación por polinomios y nuestro polinomio tiene un grado elevado.  Lo que resulta en oscilaciones en los extremos del intervalo de interpolación.
 
 
+Existen varias alternativas para poder obtener un mejor ajuste, el primero sería utilizar una cantidad menor de nodos. El segundo es que en lugar de tomar las muestras equidistantes, tomar  más muestras en los bordes del intervalo, esto ayuda a minimizar las oscilaciones. Un criterio Formal para la elección de estos puntos es usar los *nodos de chebyshev*, que son las raíces de *los polinomios de chebyshev de primera especie*. De forma más especifica para la eleccion de los nodos $(x_{0},y_{0}),(x_{1},y_{1}),\dots(x_{n},y_{n})$ elegimos para los valores de $x_{i}$ las raíces del polinomio $T_{n+1}$
 
-# Porque Lagrange vs MLS
+Los polinomios de chebyshev de primera especie se definen de la siguiente manera:
+
+$$
+T_{n}(x)=\cos(n\arccos x),~~~ x\in[-1,1]
+$$
+
+
+Que con ayuda de identidades trigonométricas pueden ser definidos de manera recursiva. 
+
+$$
+T_{n+1}(x)=2xT_{n}(x)-T_{n-1}(x)
+$$
+
+y dado que $T_{0}(x)=0$ y $T_{1}(x)=x$ podemos llegar expresar $T_{n}$ como un polinomio.
+
+> Nota:
+> $\cos(n\arccos x)$es una función que está definida solamente en $[-1,1]$ y su imagen es $[-1,1]$ es decir que está restringida. No obstante, cuando $\cos(n\arccos x)$ se **expande** a $T_{n}(x)$ en su forma polinómica, esta restricción desaparece.   
+
+### 2.2.3 Ajuste por minimos cuadrados
+
+# Porque Lagrange vs. MLS
 
 
 - Lagrange se centra en interpolar en los puntos dados, es decir $P(x_{i})=y_{i}$, prioriza eso  y le vale madre el error
