@@ -221,15 +221,11 @@ Supongamos que $\det(A)=0$ esto implica que las columnas de la matriz $A$ no son
 
 Sea
 
-$$
-C_{i}=\begin{bmatrix}
-x_{0}^i &
-x_{1}^i &
-\dots &
-x_{n}^i
 
-\end{bmatrix}^{\intercal}
-$$
+
+$$C_{i}=\begin{bmatrix}x_{0}^i &x_{1}^i &\dots &x_{n}^i\end{bmatrix}^{\intercal}$$
+
+
 
 $$C_{i} \in \text{span}(C_{j_{0}},C_{j_{2}},\dots,C_{j_{n}}),~~~~~~j_{i}\neq i$$
 
