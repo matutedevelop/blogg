@@ -983,6 +983,21 @@ $$</p>
 </span></span></code></pre></div><p>La lógica de este programa se implementó en el lenguaje de programación <em>Rust</em> por sus características <em>funcionales</em> que vienen de serie. La programacion funcional es un paradigma de programacion donde se evita el uso de ciclos <code>for</code> y la modificacion del <em>estado interno</em> de un programa.
 Este estilo de programacion nos permite <em>mapear</em> colecciones a colecciones sin necesidad de recorrer cada lista. Lo que da lugar a soluciones que pueden parecer un poco confusas en primer lugar, pero que en realidad son mas elegantes y sencillas.</p>
 <p>lo que hace la linea despues de <code>//Integracion</code> es en esencia los siguientes mapeos</p>
+<p>$$
+\usepackage{tikz-cd}
+\usepackage{graphicx}</p>
+<p>\begin{document}
+\scalebox{1}{
+\begin{tikzcd}</p>
+<p>i=0,1,&hellip;,n-1
+\arrow[d, &ldquo;a + i \Delta x&rdquo;] \
+x_i \arrow[d, &ldquo;\frac{h}{2}P(x_i)+P(x_{i+1})&rdquo;] \
+A_i \arrow[d, &ldquo;\pi \sum&rdquo;] \
+V</p>
+<p>\end{tikzcd}
+}
+\end{document}</p>
+<p>$$</p>
 <pre tabindex="0"><code class="language-tikz" data-lang="tikz">
 
 \usepackage{tikz-cd}
