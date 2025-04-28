@@ -147,7 +147,7 @@
 
       
       &nbsp; · &nbsp;
-      11 min read
+      19 min read
       
     </p>
 
@@ -179,7 +179,13 @@
       <ul>
         <li></li>
         <li><a href="#222-interpolación-opcion-1">2.2.2 Interpolación (<em>Opcion 1</em>)</a></li>
-        <li><a href="#223-ajuste-por-minimos-cuadrados">2.2.3 Ajuste por minimos cuadrados</a></li>
+        <li><a href="#223-ajuste-por-mínimos-cuadrados--ols-opción-2">2.2.3 Ajuste por mínimos cuadrados  <strong>OLS</strong> (opción 2)</a></li>
+        <li><a href="#lagrange-vs-ols">Lagrange vs OLS</a></li>
+      </ul>
+    </li>
+    <li><a href="#integracion-numerica">Integracion numerica</a>
+      <ul>
+        <li><a href="#regla-del-trapecio">Regla del trapecio</a></li>
       </ul>
     </li>
   </ul>
@@ -648,19 +654,382 @@ $$</p>
 <p>y dado que $T_{0}(x)=0$ y $T_{1}(x)=x$ podemos llegar expresar $T_{n}$ como un polinomio.</p>
 <blockquote>
 <p>Nota:
-$\cos(n\arccos x)$es una función que está definida solamente en $[-1,1]$ y su imagen es $[-1,1]$ es decir que está restringida. No obstante, cuando $\cos(n\arccos x)$ se <strong>expande</strong> a $T_{n}(x)$ en su forma polinómica, esta restricción desaparece.</p>
+$\cos(n\arccos x)$es una función que está definida solamente en $[-1,1]$ y su imagen es $[-1,1]$ es decir que está restringida. No obstante, cuando $\cos(n\arccos x)$ se <strong>expande</strong> a $T_{n}(x)$ en su forma polinómica, esta restricción desaparece.  $\cos(n\arccos x)\neq T_{n}(x)$ son funciones con distintas con dominio e imagen diferentes con la peculiaridad de que mapean a los mismos valores en $[-1,1]$</p>
 </blockquote>
-<h3 class="heading" id="223-ajuste-por-minimos-cuadrados">
-  2.2.3 Ajuste por minimos cuadrados
-  <a class="anchor" href="#223-ajuste-por-minimos-cuadrados">#</a>
+<h3 class="heading" id="223-ajuste-por-mínimos-cuadrados--ols-opción-2">
+  2.2.3 Ajuste por mínimos cuadrados  <strong>OLS</strong> (opción 2)
+  <a class="anchor" href="#223-ajuste-por-m%c3%adnimos-cuadrados--ols-opci%c3%b3n-2">#</a>
 </h3>
-<h1 class="heading" id="porque-lagrange-vs-mls">
-  Porque Lagrange vs. MLS
-  <a class="anchor" href="#porque-lagrange-vs-mls">#</a>
-</h1>
+<p>Nuestro siguiente intento fue obtener nuestro polinomio a través del método de mínimos cuadrados. Este procedimiento es fundamentalmente diferente en cuestión de  cuáles y como son los elementos e hiperparámetros con el que el investigador puede experimentar y que evidentemente producen resultados fundamentalmente distintos al de los polinomios de Lagrange.</p>
+<p>En el ajuste de polinomios por mínimos cuadrados se escoge primero el grado del polinomio que queremos que <strong>aproxime</strong> los nodos. Si elegimos un polinomio de grado $n$ tendremos $a_{0},a_{1},\dots,a_{m}$ coeficientes y al igual que en él procedimento anterior, nuestra tarea es encontrar la mejor elección de $a_{0},a_{1},\dots,a_{m}$.</p>
+<p>$$\phi(a_{0},a_{1},\dots,a_{m},x)=a_{0}+a_{1}x+a_{2}x^2+\dots+a_{m}x^m=\sum_{i=0}^m a_{i}x^i$$</p>
+<p>La $\phi$ nos permite explorar el espacio $\mathbb{R}^n[x]$  y comparar sus valores en $x_{i}$ y apartir de ahi ver si la funcion nos es de utilidad.</p>
+<p>!
+
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Image Description" src="https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250426210948.png" >
+    </div>
+
+    
+</figure>
+</p>
+<blockquote>
+<p>La figura anterior ejemplifica  el espacio y sus elementos tienen diferentes <em>errores</em> respecto a los nodos</p>
+</blockquote>
+<p>$$
+\epsilon=\sum_{i=0}^n[y_{i}-\phi(a_{0},a_{1},\dots,a_{m},x_{i})]^2
+$$</p>
+<p>Se denomina <em>Error cuadrado</em>  y es una funcion dependiente de $a_{0},a_{1},\dots,a_{m}$. La mejor o las mejores elecciones de estos valores ocurre cuando se minimiza $\epsilon$. Es decir que estamos ante un problema de optimizacion.</p>
+<h4 class="heading" id="minimizar-una-funcion-de-varias-variables">
+  Minimizar una funcion de varias variables
+  <a class="anchor" href="#minimizar-una-funcion-de-varias-variables">#</a>
+</h4>
+<p>!
+
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Image Description" src="https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250426212345.png" >
+    </div>
+
+    
+</figure>
+</p>
+<p>los minimos locales de una funcion de varias variables $f$ se encuentran en aquellos puntos ta que el <em>gradiente de la funcion</em> es el vector nulo</p>
+<p>$$\nabla f(x_{1},x_{2},\dots,x_{m})= \begin{bmatrix}
+0 \
+0 \
+\vdots \
+0
+\end{bmatrix}$$</p>
+<p>$\nabla f$ es una <em>funcion vectorial</em> que devuelve un vector cuya direccion nos indica hacia donde movernos en el espacio $\mathbb{R}^n$ de tal forma que el valor de $f$ aumente lo mas posible en ese punto. Otra interpretacion es que el vector gradiente tiene la misma direccion a la del plano tangente  a $f$ en ese punto. Similar a la recta tangente al punto en una variable</p>
+<p>![[Solidos de revolucion 2025-04-26 23.49.24.excalidraw|800]]</p>
+<p>Es decir que el $\nabla f$ vale lo mismo 0 en los máximos y mínimos locales, además de en una clase de puntos denominados puntos silla.
+El vector gradiente se  define como</p>
+<p>$$
+\nabla f=\begin{bmatrix}
+\frac{\partial f}{\partial x_{1}} \
+\frac{\partial f}{\partial x_{2}} \
+\vdots \
+\frac{\partial f}{\partial x_{m}}
+\end{bmatrix}</p>
+<p>$$</p>
+<h4 class="heading" id="minimizando-epsilon">
+  Minimizando $\epsilon$
+  <a class="anchor" href="#minimizando-epsilon">#</a>
+</h4>
+<p>Regresando a la función</p>
+<p>$$
+\epsilon=\sum_{i=0}^n[y_{i}-\phi(a_{0},a_{1},\dots,a_{m},x_{i})]^2
+$$</p>
+<p>Se tiene que cumplir que $\frac{\partial \epsilon}{\partial a_{l}}=0$ con  $l=0,1,\dots,m$</p>
+<p>$$
+\epsilon=\sum_{i=0}^n[y_{i}^2-2y_{i}\phi(a_{0},a_{1},\dots,a_{m},x_{i})+ \phi(a_{0},a_{1},\dots,a_{m},x_{i})^2]
+$$</p>
+<p>$$
+\epsilon=[\sum_{i=0}^ny_{i}^2- \sum_{i=0}^n2y_{i}\phi(a_{0},a_{1},\dots,a_{m},x_{i})+ \sum_{i=0}^n\phi(a_{0},a_{1},\dots,a_{m},x_{i})^2]
+$$</p>
+<p>$$
+\epsilon=[\sum_{i=0}^ny_{i}^2- \sum_{i=0}^n2y_{i}\sum_{j=0}^m a_{i}x^i+ \sum_{i=0}^n (\sum_{j=0}^m a_{j}x_{i}^j)^2]
+$$</p>
+<p>$$
+\epsilon=[\sum_{i=0}^ny_{i}^2- \sum_{i=0}^n2y_{i}\sum_{j=0}^m a_{j}x_{i}^j+ \sum_{i=0}^n \sum_{j=0}^m a_{j}x_{i}^j \sum_{k=0}^m a_{k}x_{i}^k]
+$$</p>
+<p>buscamos encontrar la derivada repecto a las variables de las que depende $\epsilon$. vamos termino por termino</p>
+<ol>
+<li>$\sum_{i=0}^ny_{i}^2$
+no tiene $a_{l}$ por ninguna parte, por lo que es constante respecto a esta variable</li>
+</ol>
+<p>$$\frac{\partial \epsilon}{\partial a_{l}}\sum_{i=0}^ny_{i}^2=0$$</p>
+<ol start="2">
+<li>Para el segundo termino podemos hacer uso de los <a href="https://es.wikipedia.org/wiki/Corchete_de_Iverson"><em>corchetes de iverson</em></a> para simplificar un poco la notacion a fin de hacerlo un poco mas entendible.</li>
+</ol>
+<p>$$\frac{\partial }{\partial a_{l}} - \sum_{i=0}^n2y_{i}\sum_{j=0}^m a_{j}x_{i}^j = \frac{\partial }{\partial a_{l}} -\sum_{i=0}^n\sum_{j=0}^m  2y_{i}a_{j}x_{i}^j~~[j=l]$$</p>
+<p>los corchetes $[j=l]$ son una <em>propocision logica</em> que debe de ser verdadera en cada iteracion. Es decir. Sino se cumple la condicion no se suma nada. $j=l$ una sola vez durante todo el ciclo de $\sum_{j}$. Es decir que el resto de iteraciones  el termino es constante respecto a $a_{l}$. Por lo que se puede quitar la sumatoria y sustituir  $j$ por $l$</p>
+<p>$$\frac{\partial }{\partial a_{l}} -2a_{l}\sum_{i=0}^n  y_{i}x_{i}^l=-2\sum_{i=0}^n  y_{i}x_{i}^l$$
+3.
+$$\sum_{i=0}^n\sum_{j=0}^m a_{j}x_{i}^j \sum_{k=0}^m a_{k}x_{i}^k=\sum <em>{j=0}^m \sum <em>{k=0}^m a</em>{j}a</em>{k} \sum_{i=0}^n x_{i}^{j+k}$$</p>
+<p>$$
+\frac{\partial }{\partial a_{l}}\sum <em>{j=0}^m \sum <em>{k=0}^m a</em>{j}a</em>{k} \sum_{i=0}^n x_{i}^{j+k}= \sum <em>{j=0}^m \sum <em>{k=0}^m  [a</em>{k}[j=l] + a</em>{j}[k=l]] \sum_{i=0}^n x_{i}^{j+k}
+$$
+al igual que en el caso anterior  cuando $j=l$ la sumatoria con indice $j$ se anula y queda solo $\sum_{k}^m a_{k}$, pasa exactamente lo mismo cuando $k=l$. Por lo tanto hay $m+1$ veces en las que solo queda $\sum a_{k}\sum \dots$ y $m+1$ veces en las que queda $\sum a_{j} \sum\dots$ pero estas dos son exactamente la misma suma por lo que tenemos al final</p>
+<p>$$
+2\sum_{k=0}^m a_{k}\sum <em>{i=0}^n x</em>{i}^{l+k}
+$$</p>
+<blockquote>
+<p>alch esta parte esta confusa</p>
+</blockquote>
+<p>$$\frac{\partial \epsilon}{\partial a_{l}}=-2\sum_{i=0}^n  y_{i}x_{i}^l+2\sum_{k=0}^m a_{k}\sum <em>{i=0}^n x</em>{i}^{l+k}$$</p>
+<p>-$2\sum_{i=0}^n  y_{i}x_{i}^l$ es un valor conocido por lo que lo podemos pasar al otro lado de la igualdad</p>
+<p>$$\sum_{k=0}^m a_{k}\sum <em>{i=0}^n x</em>{i}^{l+k}=\sum_{i=0}^n  y_{i}x_{i}^l$$</p>
+<p>Dando valores a $k,l$ se llega a un sistema de $m$ ecuaciones con $m$ variables</p>
+<p>$$ a_{0}\sum <em>{i=0}^n x</em>{i}^{0+0}+a_{1}\sum <em>{i=0}^n x</em>{i}^{1+0}+a_{2}\sum <em>{i=0}^n x</em>{i}^{2+0}+\dots+a_{n}\sum <em>{i=0}^n x</em>{i}^{n+0}=\sum_{i=0}^n  y_{i}x_{i}^0$$</p>
+<p>$$ a_{0}\sum <em>{i=0}^n x</em>{i}^{0+1}+a_{1}\sum <em>{i=0}^n x</em>{i}^{1+1}+a_{2}\sum <em>{i=0}^n x</em>{i}^{2+1}+\dots+a_{n}\sum <em>{i=0}^n x</em>{i}^{n+1}  = \sum_{i=0}^n  y_{i}x_{i}^1$$</p>
+<p>$$\vdots$$</p>
+<p>$$ a_{0}\sum <em>{i=0}^n x</em>{i}^{0+n}+a_{1}\sum <em>{i=0}^n x</em>{i}^{1+n}+a_{2}\sum <em>{i=0}^n x</em>{i}^{2+n}+\dots+a_{n}\sum <em>{i=0}^n x</em>{i}^{n+n}  = \sum_{i=0}^n  y_{i}x_{i}^n$$</p>
+<p>$$
+\begin{bmatrix}
+n&amp;\sum_{i=0}^m x_{i}&amp;\sum_{i=0}^mx_{i}^2\dots&amp;\sum_{i=0}^n x_{i}^n\
+\sum_{i=0}^m x_{i} &amp;\sum_{i=0}^m x_{i}^2 &amp; \sum_{i=0}^m x_{i}^3\dots &amp;\sum_{i=0}^m x_{i}^{n+1} \
+\vdots&amp;\vdots&amp;\vdots&amp; \ddots&amp;  \
+\sum_{i=0}^m x_{i}^n &amp;\sum_{i=0}^m x_{i}^{n+1}&amp;\sum_{i=0}^m x_{i}^{n+2}
+&amp;\dots \sum_{i=0}^m x_{i}^{2n}
+\end{bmatrix}
+$$</p>
+<p>El demostrar que el determinante de esta matriz es 0 es a su vez demostrar que existe un unico punto critico $c=(c_{1},c_{2},\dots,c_{n})$ cuyo procedimiento queda fuera del dominio de este travajo (<em>me quede sin tiempo xd</em>).</p>
+<p>Y una vez obtenido dicho punto $c$ se puede evaluar en la <em>matriz Heissiana</em> , obtener el determinante y usarlo como discriminante por el criterio de la segunda derivada parcial para demostrar que efectivamente el punto $c$ es un minimo local.</p>
+<h4 class="heading" id="procedimiento-1">
+  Procedimiento
+  <a class="anchor" href="#procedimiento-1">#</a>
+</h4>
+<p>para encontrar el polinomio de Lagrange dada por la sucesión de nodos, podemos utilizar el siguiente código</p>
+<div class="highlight"><pre tabindex="0" style="color:#d6cbb4;background-color:#252b2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e67e80">from</span> numpy.polynomial.polynomial <span style="color:#e67e80">import</span> Polynomial
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>poly_ols <span style="color:#7a8478">=</span> Polynomial<span style="color:#7a8478">.</span>fit(x_sample,y_sample,deg<span style="color:#7a8478">=</span><span style="color:#d699b6">26</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>poly_ols<span style="color:#7a8478">.</span>convert()<span style="color:#7a8478">.</span>coef[::<span style="color:#7a8478">-</span><span style="color:#d699b6">1</span>]
+</span></span></code></pre></div><p>que nos devuelve una clase polinomio que contiene los coeficientes de nuestro interes.</p>
+<p>Grafcando el polinomio se obtuvo</p>
+<p>!
+
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Image Description" src="https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250427121518.png" >
+    </div>
+
+    
+</figure>
+</p>
+<p>un ajuste mucho mas adecuado</p>
+<h5 class="heading" id="coeficientes">
+  Coeficientes
+  <a class="anchor" href="#coeficientes">#</a>
+</h5>
+<p>$$</p>
+<p>(1.391(10)^{+00})</p>
 <ul>
-<li>Lagrange se centra en interpolar en los puntos dados, es decir $P(x_{i})=y_{i}$, prioriza eso  y le vale madre el error</li>
+<li>(2.669(10)^{-02}) x</li>
+<li>(-1.535(10)^{-01}) x^2</li>
+<li>(7.497(10)^{-02}) x^3</li>
+<li>(-1.333(10)^{-02}) x^4<br>
+$$
+$$</li>
+<li>(1.229(10)^{-03}) x^5</li>
+<li>(-6.344(10)^{-05}) x^6</li>
+<li>(1.763(10)^{-06}) x^7</li>
+<li>(-2.177(10)^{-08}) x^8</li>
+<li>(4.852(10)^{-11}) x^9
+$$</li>
 </ul>
+<h3 class="heading" id="lagrange-vs-ols">
+  Lagrange vs OLS
+  <a class="anchor" href="#lagrange-vs-ols">#</a>
+</h3>
+<p>Comparando los residuales se obtuvo una diferencia abrumadora  en el error.</p>
+<p>!
+
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Image Description" src="https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250427122552.png" >
+    </div>
+
+    
+</figure>
+</p>
+<p>Se sospecha que esta diferencia en el error es causada por el limite de la representacion de los decimales que tienen las computadoras. Esto debido a que teoricamente el polinomio de Lagrange deberia de tener error 0 al pasar por cada uno de los puntos. No obstante seguiria siendo un polinomio altamente <em>inestable</em> por ser de un grado elevado.</p>
+<p>Por otro lado con minimos cuadrados nosotros somos capaces de elegir el grado del polinomio y poder llegar asi a curvas mucho mas estables y suaves que nos generan sobre todo un mejor resultado.</p>
+<h2 class="heading" id="integracion-numerica">
+  Integracion numerica
+  <a class="anchor" href="#integracion-numerica">#</a>
+</h2>
+<p>Una vez obtenido la funcion que modela la silueta de la botella toca calcular el volumen atraves de los metodos de integracion discutidos previamente</p>
+<p>$$
+A= \pi \int_{a}^b P^2(x)~dx
+$$</p>
+<p>Los polinomios tienen la virtud de ser bastante sencillos de integrar de forma simbolica. Ese no sera el procedimiento que usaremos nosotros.</p>
+<h3 class="heading" id="regla-del-trapecio">
+  Regla del trapecio
+  <a class="anchor" href="#regla-del-trapecio">#</a>
+</h3>
+<h4 class="heading" id="intuicion-del-metodo-de--integracion-numerica">
+  Intuicion del metodo de  integracion numerica
+  <a class="anchor" href="#intuicion-del-metodo-de--integracion-numerica">#</a>
+</h4>
+<p>Para entender de forma intuitiva la construccion de este metodo es pertinente revisitar la construccion informal de las sumas de Riemman.</p>
+<p>$$A= \int_{a}^b f(x)~dx \approx \sum_{i=0}^n f(x_{i})\Delta x=A&rsquo;$$</p>
+<p>donde $x_{i}=a+i\Delta$ y se sabe que $A&rsquo;\to A$ conforme $n \to \infty$.</p>
+<p>Geometricamente lo que esto quiere decir es que la serie de las areas de los rectangulos  de ancho $\Delta x$ y altura $f(x_{i})$  converge al area total bajo la curva conforme se usan mas rectangulos.</p>
+<p>![[Solidos de revolucion 2025-04-27 19.11.47.excalidraw|1000]]</p>
+<p>Evidentemente trabajando con computadoras no podemos realizar un calculo o tarea un numero infinito de veces pero podemos hacerla un numero de veces suficientes para que la aproximacion sea satisfactoria. Pero tambien buscamos que el trabajo computacional invertido sea invertido de manera eficiente. Esto lo logramos realizando optimizaciones para minimizar el error en las sumas finitas. como por ejemplo cambiando los rctangulos por trapecios</p>
+<p>![[Solidos de revolucion 2025-04-27 19.28.22.excalidraw|1000]]</p>
+<p>entonces si deseamos aproximar de una mejor manera el area bajo la curva de $P$ reformulamos las sumas de riemman para sumar areas de trapecios en lugar de rectangulos.</p>
+<p>El area del trapecio se obtiene de la siguiente manera</p>
+<p>$$\frac{h}{2}(a_{1}+a_{2})$$</p>
+<p>de donde $h$ es el largo del trapecio  y$a_{1},a_{2}$ las alturas de los trapecios</p>
+<p>![[Solidos de revolucion 2025-04-27 19.58.03.excalidraw]]</p>
+<h4 class="heading" id="procedimiento-2">
+  Procedimiento
+  <a class="anchor" href="#procedimiento-2">#</a>
+</h4>
+<p>para aproximar el volumen del solido de revolucion se tiene que aproximar</p>
+<p>$$\pi\int_{a}^bP^2(x)~dx$$</p>
+<p>$a=0,b=\frac{49}{2}$ se desea dividir el intervalo en 10000 partes para calcular el area de 10000 trapecios</p>
+<p>$$n=1000$$
+$$\Delta x= \frac{b-a}{n}$$</p>
+<p>$$x_{i}=a+i\Delta x,~~~~i=0,1,\dots,n-1$$
+$$A_{i}=\frac{\Delta x}{2}((P(x_{i}))^2+(P(x_{i}+ \Delta x))^2),~~~~i=0,1,\dots,n-1$$</p>
+<p>Donde $A_{i}$ es sucesion de los volumenes de los trapecios apartir del punto $x_{i}$.</p>
+<p>El volumen total del solido de revolucion es finalmente</p>
+<p>$$
+V=\pi \sum_{i=0}^{n-1}A_{i}
+$$</p>
+<blockquote>
+<p>Nota: se uso dentro de la formula del trapecio $x_{i}+\Delta x$ en lugar de $x_{i+1}$ porque la serie esta definida en principio hasta $n-1$. Esto se escribio asi de forma que reflejara la forma exacta en la que el codigo fue implementado</p>
+</blockquote>
+<h5 class="heading" id="codigo">
+  Codigo
+  <a class="anchor" href="#codigo">#</a>
+</h5>
+<h6 class="heading" id="polinomio">
+  Polinomio
+  <a class="anchor" href="#polinomio">#</a>
+</h6>
+<div class="highlight"><pre tabindex="0" style="color:#d6cbb4;background-color:#252b2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#e67e80">use</span> std::<span style="color:#dbbc7f">f64</span>::consts::<span style="color:#d699b6">PI</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#859289;font-style:italic">// Polinomio aproximador
+</span></span></span><span style="display:flex;"><span><span style="color:#859289;font-style:italic"></span><span style="color:#e67e80">fn</span> <span style="color:#b2c98f">p</span>(x: <span style="color:#dbbc7f">f64</span>) -&gt; <span style="color:#dbbc7f">f64</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#d699b6">4.852272763781776e-11_</span><span style="color:#e67e80">f64</span> <span style="color:#7a8478">*</span> x.powi(<span style="color:#d699b6">9</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#7a8478">-</span> <span style="color:#d699b6">2.1769207076913663e-08_</span><span style="color:#e67e80">f64</span> <span style="color:#7a8478">*</span> x.powi(<span style="color:#d699b6">8</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#7a8478">+</span> <span style="color:#d699b6">1.76279592469982e-06_</span><span style="color:#e67e80">f64</span> <span style="color:#7a8478">*</span> x.powi(<span style="color:#d699b6">7</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#7a8478">-</span> <span style="color:#d699b6">6.344035947156883e-05_</span><span style="color:#e67e80">f64</span> <span style="color:#7a8478">*</span> x.powi(<span style="color:#d699b6">6</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#7a8478">+</span> <span style="color:#d699b6">0.0012285008019216523_</span><span style="color:#e67e80">f64</span> <span style="color:#7a8478">*</span> x.powi(<span style="color:#d699b6">5</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#7a8478">-</span> <span style="color:#d699b6">0.013329090419386656_</span><span style="color:#e67e80">f64</span> <span style="color:#7a8478">*</span> x.powi(<span style="color:#d699b6">4</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#7a8478">+</span> <span style="color:#d699b6">0.074970254828055_</span><span style="color:#e67e80">f64</span> <span style="color:#7a8478">*</span> x.powi(<span style="color:#d699b6">3</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#7a8478">-</span> <span style="color:#d699b6">0.15346857576947837_</span><span style="color:#e67e80">f64</span> <span style="color:#7a8478">*</span> x.powi(<span style="color:#d699b6">2</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#7a8478">+</span> <span style="color:#d699b6">0.026690674027164477_</span><span style="color:#e67e80">f64</span> <span style="color:#7a8478">*</span> x
+</span></span><span style="display:flex;"><span>    <span style="color:#7a8478">+</span> <span style="color:#d699b6">1.3909550029629412_</span><span style="color:#e67e80">f64</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#7a8478">+</span> <span style="color:#7a8478">-</span> <span style="color:#d699b6">0.4</span> <span style="color:#859289;font-style:italic">// Ajuste por el grosor aproximado de la botella
+</span></span></span><span style="display:flex;"><span><span style="color:#859289;font-style:italic"></span>}
+</span></span></code></pre></div><h6 class="heading" id="funcion-area-trapecio">
+  Funcion area trapecio
+  <a class="anchor" href="#funcion-area-trapecio">#</a>
+</h6>
+<div class="highlight"><pre tabindex="0" style="color:#d6cbb4;background-color:#252b2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#e67e80">fn</span> <span style="color:#b2c98f">area_trapecio</span>(x1: <span style="color:#dbbc7f">f64</span>, x2: <span style="color:#dbbc7f">f64</span>, dx: <span style="color:#dbbc7f">f64</span>, f: impl <span style="color:#d699b6">Fn</span>(<span style="color:#dbbc7f">f64</span>) -&gt; <span style="color:#dbbc7f">f64</span>) -&gt; <span style="color:#dbbc7f">f64</span> {
+</span></span><span style="display:flex;"><span>    dx <span style="color:#7a8478">*</span> (f(x1) <span style="color:#7a8478">+</span> f(x2)) <span style="color:#7a8478">/</span> <span style="color:#d699b6">2.</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h6 class="heading" id="logica-principal">
+  Logica principal
+  <a class="anchor" href="#logica-principal">#</a>
+</h6>
+<div class="highlight"><pre tabindex="0" style="color:#d6cbb4;background-color:#252b2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#e67e80">fn</span> <span style="color:#b2c98f">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#859289;font-style:italic">// Constantes
+</span></span></span><span style="display:flex;"><span><span style="color:#859289;font-style:italic"></span>    <span style="color:#e67e80">let</span> a <span style="color:#7a8478">=</span> <span style="color:#d699b6">0.0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#e67e80">let</span> b <span style="color:#7a8478">=</span> <span style="color:#d699b6">24.5</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#e67e80">let</span> n <span style="color:#7a8478">=</span> <span style="color:#d699b6">10000</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#e67e80">let</span> dx <span style="color:#7a8478">=</span> (b <span style="color:#7a8478">-</span> a) <span style="color:#7a8478">/</span> n <span style="color:#e67e80">as</span> <span style="color:#dbbc7f">f64</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#859289;font-style:italic">// Integración
+</span></span></span><span style="display:flex;"><span><span style="color:#859289;font-style:italic"></span>    <span style="color:#e67e80">let</span> volumen <span style="color:#7a8478">=</span> (<span style="color:#d699b6">0</span><span style="color:#7a8478">..</span>n)
+</span></span><span style="display:flex;"><span>        .map(<span style="color:#7a8478">|</span>i<span style="color:#7a8478">|</span> a <span style="color:#7a8478">+</span> i <span style="color:#e67e80">as</span> <span style="color:#dbbc7f">f64</span> <span style="color:#7a8478">*</span> dx)
+</span></span><span style="display:flex;"><span>        .map(<span style="color:#7a8478">|</span>xi<span style="color:#7a8478">|</span> area_trapecio(xi, xi <span style="color:#7a8478">+</span> dx, dx,<span style="color:#7a8478">|</span>x<span style="color:#7a8478">|</span> p(x).powi(<span style="color:#d699b6">2</span>)))
+</span></span><span style="display:flex;"><span>        .sum::<span style="color:#7a8478">&lt;</span><span style="color:#dbbc7f">f64</span><span style="color:#7a8478">&gt;</span>() <span style="color:#7a8478">*</span> <span style="color:#d699b6">PI</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#b2c98f">&#34;El volumen del solido de revolucion es aproximadamente </span><span style="color:#b2c98f">{}</span><span style="color:#b2c98f">&#34;</span>, volumen);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>La lógica de este programa se implementó en el lenguaje de programación <em>Rust</em> por sus características <em>funcionales</em> que vienen de serie. La programacion funcional es un paradigma de programacion donde se evita el uso de ciclos <code>for</code> y la modificacion del <em>estado interno</em> de un programa.
+Este estilo de programacion nos permite <em>mapear</em> colecciones a colecciones sin necesidad de recorrer cada lista. Lo que da lugar a soluciones que pueden parecer un poco confusas en primer lugar, pero que en realidad son mas elegantes y sencillas.</p>
+<p>lo que hace la linea despues de <code>//Integracion</code> es en esencia los siguientes mapeos</p>
+<pre tabindex="0"><code class="language-tikz" data-lang="tikz">
+
+\usepackage{tikz-cd}
+\usepackage{graphicx} 
+
+\begin{document}
+\scalebox{1}{
+\begin{tikzcd}
+
+
+i=0,1,...,n-1
+\arrow[d, &#34;a + i \Delta x&#34;] \\
+x_i \arrow[d, &#34;\frac{h}{2}P(x_i)+P(x_{i+1})&#34;] \\
+A_i \arrow[d, &#34;\pi \sum&#34;] \\
+V
+
+
+\end{tikzcd}
+}
+\end{document}
+</code></pre><h1 class="heading" id="resultados">
+  Resultados
+  <a class="anchor" href="#resultados">#</a>
+</h1>
+<p>En primera instancia el volumen aproximado no fue bueno. Alrededor de 511 ml. Se presume que el grosor de la botella es de alrededor de 4 mm por lo que basto con integrar $P(x)-.04$ para llegar a una aaproximaciónmucho mas razonable de 369 mm, mucho mas cerca de los 355 ml mas el volumen de cuello de la botella</p>
+<p>!
+
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Image Description" src="https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250427205723.png" >
+    </div>
+
+    
+</figure>
+</p>
+<hr>
 <h1 class="heading" id="bibliografia">
   Bibliografia
   <a class="anchor" href="#bibliografia">#</a>
@@ -669,6 +1038,12 @@ $\cos(n\arccos x)$es una función que está definida solamente en $[-1,1]$ y su 
 <li><a href="https://static.sumaysigue.uchile.cl/disponibilizacion_aula360/G3D/U3%20-%20Generaci%C3%B3n%20de%20cuerpos%20utilizando%20patrones%20geom%C3%A9tricos/T2%20-%20Volumen%20de%20cuerpos%20geom%C3%A9tricos_/C1%20-%20Volumen%20y%20Principio%20de%20Cavalieri/Apunte%20Volumen%20y%20Principio%20de%20Cavalieri.pdf">https://static.sumaysigue.uchile.cl/disponibilizacion_aula360/G3D/U3%20-%20Generaci%C3%B3n%20de%20cuerpos%20utilizando%20patrones%20geom%C3%A9tricos/T2%20-%20Volumen%20de%20cuerpos%20geom%C3%A9tricos_/C1%20-%20Volumen%20y%20Principio%20de%20Cavalieri/Apunte%20Volumen%20y%20Principio%20de%20Cavalieri.pdf</a></li>
 <li>Curso_Teoria_Medida.pdf</li>
 <li>file:///C:/Users/fofoy/Downloads/ENTRETEXTOS-30-L2.pdf</li>
+<li><a href="https://es.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/partial-derivative-and-gradient-articles/a/the-gradient">https://es.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/partial-derivative-and-gradient-articles/a/the-gradient</a></li>
+<li>leithold</li>
+<li><a href="https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/quadratic-approximations/a/the-hessian">https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/quadratic-approximations/a/the-hessian</a></li>
+<li><a href="https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/optimizing-multivariable-functions/a/second-partial-derivative-test">https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/optimizing-multivariable-functions/a/second-partial-derivative-test</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Corchete_de_Iverson">https://es.wikipedia.org/wiki/Corchete_de_Iverson</a></li>
+<li><a href="https://www.cartagena99.com/recursos/alumnos/apuntes/DYCRE_1_T1_MaEm_U4L03.pdf">https://www.cartagena99.com/recursos/alumnos/apuntes/DYCRE_1_T1_MaEm_U4L03.pdf</a></li>
 </ul>
 
     
