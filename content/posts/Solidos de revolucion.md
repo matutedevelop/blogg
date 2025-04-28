@@ -436,23 +436,389 @@ $$
 y dado que $T_{0}(x)=0$ y $T_{1}(x)=x$ podemos llegar expresar $T_{n}$ como un polinomio.
 
 > Nota:
-> $\cos(n\arccos x)$es una función que está definida solamente en $[-1,1]$ y su imagen es $[-1,1]$ es decir que está restringida. No obstante, cuando $\cos(n\arccos x)$ se **expande** a $T_{n}(x)$ en su forma polinómica, esta restricción desaparece.   
+> $\cos(n\arccos x)$es una función que está definida solamente en $[-1,1]$ y su imagen es $[-1,1]$ es decir que está restringida. No obstante, cuando $\cos(n\arccos x)$ se **expande** a $T_{n}(x)$ en su forma polinómica, esta restricción desaparece.  $\cos(n\arccos x)\neq T_{n}(x)$ son funciones con distintas con dominio e imagen diferentes con la peculiaridad de que mapean a los mismos valores en $[-1,1]$ 
 
-### 2.2.3 Ajuste por minimos cuadrados
-
-# Porque Lagrange vs. MLS
+### 2.2.3 Ajuste por mínimos cuadrados  **OLS** (opción 2)
 
 
-- Lagrange se centra en interpolar en los puntos dados, es decir $P(x_{i})=y_{i}$, prioriza eso  y le vale madre el error
+Nuestro siguiente intento fue obtener nuestro polinomio a través del método de mínimos cuadrados. Este procedimiento es fundamentalmente diferente en cuestión de  cuáles y como son los elementos e hiperparámetros con el que el investigador puede experimentar y que evidentemente producen resultados fundamentalmente distintos al de los polinomios de Lagrange.
+
+En el ajuste de polinomios por mínimos cuadrados se escoge primero el grado del polinomio que queremos que **aproxime** los nodos. Si elegimos un polinomio de grado $n$ tendremos $a_{0},a_{1},\dots,a_{m}$ coeficientes y al igual que en él procedimento anterior, nuestra tarea es encontrar la mejor elección de $a_{0},a_{1},\dots,a_{m}$.
+
+
+$$\phi(a_{0},a_{1},\dots,a_{m},x)=a_{0}+a_{1}x+a_{2}x^2+\dots+a_{m}x^m=\sum_{i=0}^m a_{i}x^i$$
+
+La $\phi$ nos permite explorar el espacio $\mathbb{R}^n[x]$  y comparar sus valores en $x_{i}$ y apartir de ahi ver si la funcion nos es de utilidad.
+
+
+
+!![Image Description](https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250426210948.png)
+> La figura anterior ejemplifica  el espacio y sus elementos tienen diferentes *errores* respecto a los nodos
+
+$$
+\epsilon=\sum_{i=0}^n[y_{i}-\phi(a_{0},a_{1},\dots,a_{m},x_{i})]^2
+$$
+
+Se denomina *Error cuadrado*  y es una funcion dependiente de $a_{0},a_{1},\dots,a_{m}$. La mejor o las mejores elecciones de estos valores ocurre cuando se minimiza $\epsilon$. Es decir que estamos ante un problema de optimizacion.
+
+#### Minimizar una funcion de varias variables 
+
+!![Image Description](https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250426212345.png)
+
+
+los minimos locales de una funcion de varias variables $f$ se encuentran en aquellos puntos ta que el *gradiente de la funcion* es el vector nulo
+
+$$\nabla f(x_{1},x_{2},\dots,x_{m})= \begin{bmatrix}
+0 \\
+0 \\
+\vdots \\
+0
+\end{bmatrix}$$
+
+$\nabla f$ es una *funcion vectorial* que devuelve un vector cuya direccion nos indica hacia donde movernos en el espacio $\mathbb{R}^n$ de tal forma que el valor de $f$ aumente lo mas posible en ese punto. Otra interpretacion es que el vector gradiente tiene la misma direccion a la del plano tangente  a $f$ en ese punto. Similar a la recta tangente al punto en una variable
+
+
+![[Solidos de revolucion 2025-04-26 23.49.24.excalidraw|800]]
+
+
+
+Es decir que el $\nabla f$ vale lo mismo 0 en los máximos y mínimos locales, además de en una clase de puntos denominados puntos silla. 
+El vector gradiente se  define como
+
+$$
+\nabla f=\begin{bmatrix}
+\frac{\partial f}{\partial x_{1}} \\
+\frac{\partial f}{\partial x_{2}} \\
+\vdots \\
+\frac{\partial f}{\partial x_{m}}
+\end{bmatrix}
+
+$$
+
+#### Minimizando $\epsilon$
+
+Regresando a la función
+
+$$
+\epsilon=\sum_{i=0}^n[y_{i}-\phi(a_{0},a_{1},\dots,a_{m},x_{i})]^2
+$$
+
+Se tiene que cumplir que $\frac{\partial \epsilon}{\partial a_{l}}=0$ con  $l=0,1,\dots,m$
+
+$$
+\epsilon=\sum_{i=0}^n[y_{i}^2-2y_{i}\phi(a_{0},a_{1},\dots,a_{m},x_{i})+ \phi(a_{0},a_{1},\dots,a_{m},x_{i})^2]
+$$
+
+$$
+\epsilon=[\sum_{i=0}^ny_{i}^2- \sum_{i=0}^n2y_{i}\phi(a_{0},a_{1},\dots,a_{m},x_{i})+ \sum_{i=0}^n\phi(a_{0},a_{1},\dots,a_{m},x_{i})^2]
+$$
+
+$$
+\epsilon=[\sum_{i=0}^ny_{i}^2- \sum_{i=0}^n2y_{i}\sum_{j=0}^m a_{i}x^i+ \sum_{i=0}^n (\sum_{j=0}^m a_{j}x_{i}^j)^2]
+$$
+
+
+$$
+\epsilon=[\sum_{i=0}^ny_{i}^2- \sum_{i=0}^n2y_{i}\sum_{j=0}^m a_{j}x_{i}^j+ \sum_{i=0}^n \sum_{j=0}^m a_{j}x_{i}^j \sum_{k=0}^m a_{k}x_{i}^k]
+$$
+
+
+buscamos encontrar la derivada repecto a las variables de las que depende $\epsilon$. vamos termino por termino
+
+1. $\sum_{i=0}^ny_{i}^2$
+no tiene $a_{l}$ por ninguna parte, por lo que es constante respecto a esta variable
+
+$$\frac{\partial \epsilon}{\partial a_{l}}\sum_{i=0}^ny_{i}^2=0$$
+
+2.  Para el segundo termino podemos hacer uso de los [*corchetes de iverson*](https://es.wikipedia.org/wiki/Corchete_de_Iverson) para simplificar un poco la notacion a fin de hacerlo un poco mas entendible.
+
+$$\frac{\partial }{\partial a_{l}} - \sum_{i=0}^n2y_{i}\sum_{j=0}^m a_{j}x_{i}^j = \frac{\partial }{\partial a_{l}} -\sum_{i=0}^n\sum_{j=0}^m  2y_{i}a_{j}x_{i}^j~~[j=l]$$
+
+los corchetes $[j=l]$ son una *propocision logica* que debe de ser verdadera en cada iteracion. Es decir. Sino se cumple la condicion no se suma nada. $j=l$ una sola vez durante todo el ciclo de $\sum_{j}$. Es decir que el resto de iteraciones  el termino es constante respecto a $a_{l}$. Por lo que se puede quitar la sumatoria y sustituir  $j$ por $l$
+
+
+$$\frac{\partial }{\partial a_{l}} -2a_{l}\sum_{i=0}^n  y_{i}x_{i}^l=-2\sum_{i=0}^n  y_{i}x_{i}^l$$
+3. 
+$$\sum_{i=0}^n\sum_{j=0}^m a_{j}x_{i}^j \sum_{k=0}^m a_{k}x_{i}^k=\sum _{j=0}^m \sum _{k=0}^m a_{j}a_{k} \sum_{i=0}^n x_{i}^{j+k}$$
+
+$$
+\frac{\partial }{\partial a_{l}}\sum _{j=0}^m \sum _{k=0}^m a_{j}a_{k} \sum_{i=0}^n x_{i}^{j+k}= \sum _{j=0}^m \sum _{k=0}^m  [a_{k}[j=l] + a_{j}[k=l]] \sum_{i=0}^n x_{i}^{j+k} 
+$$
+al igual que en el caso anterior  cuando $j=l$ la sumatoria con indice $j$ se anula y queda solo $\sum_{k}^m a_{k}$, pasa exactamente lo mismo cuando $k=l$. Por lo tanto hay $m+1$ veces en las que solo queda $\sum a_{k}\sum \dots$ y $m+1$ veces en las que queda $\sum a_{j} \sum\dots$ pero estas dos son exactamente la misma suma por lo que tenemos al final
+
+$$
+2\sum_{k=0}^m a_{k}\sum _{i=0}^n x_{i}^{l+k}
+$$
+
+
+> alch esta parte esta confusa 
+
+
+$$\frac{\partial \epsilon}{\partial a_{l}}=-2\sum_{i=0}^n  y_{i}x_{i}^l+2\sum_{k=0}^m a_{k}\sum _{i=0}^n x_{i}^{l+k}$$
+
+
+
+-$2\sum_{i=0}^n  y_{i}x_{i}^l$ es un valor conocido por lo que lo podemos pasar al otro lado de la igualdad
+
+$$\sum_{k=0}^m a_{k}\sum _{i=0}^n x_{i}^{l+k}=\sum_{i=0}^n  y_{i}x_{i}^l$$
+
+
+
+Dando valores a $k,l$ se llega a un sistema de $m$ ecuaciones con $m$ variables 
+
+$$ a_{0}\sum _{i=0}^n x_{i}^{0+0}+a_{1}\sum _{i=0}^n x_{i}^{1+0}+a_{2}\sum _{i=0}^n x_{i}^{2+0}+\dots+a_{n}\sum _{i=0}^n x_{i}^{n+0}=\sum_{i=0}^n  y_{i}x_{i}^0$$
+
+$$ a_{0}\sum _{i=0}^n x_{i}^{0+1}+a_{1}\sum _{i=0}^n x_{i}^{1+1}+a_{2}\sum _{i=0}^n x_{i}^{2+1}+\dots+a_{n}\sum _{i=0}^n x_{i}^{n+1}  = \sum_{i=0}^n  y_{i}x_{i}^1$$
+
+
+$$\vdots$$
+
+$$ a_{0}\sum _{i=0}^n x_{i}^{0+n}+a_{1}\sum _{i=0}^n x_{i}^{1+n}+a_{2}\sum _{i=0}^n x_{i}^{2+n}+\dots+a_{n}\sum _{i=0}^n x_{i}^{n+n}  = \sum_{i=0}^n  y_{i}x_{i}^n$$
+
+
+$$
+\begin{bmatrix}
+n&\sum_{i=0}^m x_{i}&\sum_{i=0}^mx_{i}^2\dots&\sum_{i=0}^n x_{i}^n\\
+\sum_{i=0}^m x_{i} &\sum_{i=0}^m x_{i}^2 & \sum_{i=0}^m x_{i}^3\dots &\sum_{i=0}^m x_{i}^{n+1} \\ 
+\vdots&\vdots&\vdots& \ddots&  \\
+\sum_{i=0}^m x_{i}^n &\sum_{i=0}^m x_{i}^{n+1}&\sum_{i=0}^m x_{i}^{n+2}
+&\dots \sum_{i=0}^m x_{i}^{2n}
+\end{bmatrix}
+$$
+
+El demostrar que el determinante de esta matriz es 0 es a su vez demostrar que existe un unico punto critico $c=(c_{1},c_{2},\dots,c_{n})$ cuyo procedimiento queda fuera del dominio de este travajo (*me quede sin tiempo xd*).
+
+Y una vez obtenido dicho punto $c$ se puede evaluar en la *matriz Heissiana* , obtener el determinante y usarlo como discriminante por el criterio de la segunda derivada parcial para demostrar que efectivamente el punto $c$ es un minimo local.
+
+
+
+#### Procedimiento
+
+
+
+
+para encontrar el polinomio de Lagrange dada por la sucesión de nodos, podemos utilizar el siguiente código 
+
+```python
+from numpy.polynomial.polynomial import Polynomial
+
+poly_ols = Polynomial.fit(x_sample,y_sample,deg=26)
+
+poly_ols.convert().coef[::-1]
+
+```
+que nos devuelve una clase polinomio que contiene los coeficientes de nuestro interes.
+
+
+Grafcando el polinomio se obtuvo
+
+!![Image Description](https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250427121518.png)
+
+un ajuste mucho mas adecuado
+
+
+##### Coeficientes
+
+$$
+
+
+(1.391(10)^{+00})     
++ (2.669(10)^{-02}) x   
++ (-1.535(10)^{-01}) x^2 
++ (7.497(10)^{-02}) x^3   
++ (-1.333(10)^{-02}) x^4   
+$$
+$$
++ (1.229(10)^{-03}) x^5   
++ (-6.344(10)^{-05}) x^6   
++ (1.763(10)^{-06}) x^7   
++ (-2.177(10)^{-08}) x^8   
++ (4.852(10)^{-11}) x^9
+$$
+
+
+
+###  Lagrange vs OLS
+
+
+Comparando los residuales se obtuvo una diferencia abrumadora  en el error.
+
+!![Image Description](https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250427122552.png)
+
+Se sospecha que esta diferencia en el error es causada por el limite de la representacion de los decimales que tienen las computadoras. Esto debido a que teoricamente el polinomio de Lagrange deberia de tener error 0 al pasar por cada uno de los puntos. No obstante seguiria siendo un polinomio altamente *inestable* por ser de un grado elevado. 
+
+Por otro lado con minimos cuadrados nosotros somos capaces de elegir el grado del polinomio y poder llegar asi a curvas mucho mas estables y suaves que nos generan sobre todo un mejor resultado.
+
+
+## Integracion numerica
+
+Una vez obtenido la funcion que modela la silueta de la botella toca calcular el volumen atraves de los metodos de integracion discutidos previamente
+
+$$
+A= \pi \int_{a}^b P^2(x)~dx
+$$
+
+Los polinomios tienen la virtud de ser bastante sencillos de integrar de forma simbolica. Ese no sera el procedimiento que usaremos nosotros.
+
+
+### Regla del trapecio
+
+#### Intuicion del metodo de  integracion numerica
+
+Para entender de forma intuitiva la construccion de este metodo es pertinente revisitar la construccion informal de las sumas de Riemman.
+
+
+$$A= \int_{a}^b f(x)~dx \approx \sum_{i=0}^n f(x_{i})\Delta x=A'$$ 
+
+donde $x_{i}=a+i\Delta$ y se sabe que $A'\to A$ conforme $n \to \infty$.
+
+Geometricamente lo que esto quiere decir es que la serie de las areas de los rectangulos  de ancho $\Delta x$ y altura $f(x_{i})$  converge al area total bajo la curva conforme se usan mas rectangulos.
+
+![[Solidos de revolucion 2025-04-27 19.11.47.excalidraw|1000]]
+
+Evidentemente trabajando con computadoras no podemos realizar un calculo o tarea un numero infinito de veces pero podemos hacerla un numero de veces suficientes para que la aproximacion sea satisfactoria. Pero tambien buscamos que el trabajo computacional invertido sea invertido de manera eficiente. Esto lo logramos realizando optimizaciones para minimizar el error en las sumas finitas. como por ejemplo cambiando los rctangulos por trapecios
+
+![[Solidos de revolucion 2025-04-27 19.28.22.excalidraw|1000]]
+
+
+entonces si deseamos aproximar de una mejor manera el area bajo la curva de $P$ reformulamos las sumas de riemman para sumar areas de trapecios en lugar de rectangulos.
+
+El area del trapecio se obtiene de la siguiente manera
+
+$$\frac{h}{2}(a_{1}+a_{2})$$
+
+de donde $h$ es el largo del trapecio  y$a_{1},a_{2}$ las alturas de los trapecios
+
+![[Solidos de revolucion 2025-04-27 19.58.03.excalidraw]]
+
+
+#### Procedimiento
+
+para aproximar el volumen del solido de revolucion se tiene que aproximar
+
+$$\pi\int_{a}^bP^2(x)~dx$$
+
+$a=0,b=\frac{49}{2}$ se desea dividir el intervalo en 10000 partes para calcular el area de 10000 trapecios
+
+$$n=1000$$
+$$\Delta x= \frac{b-a}{n}$$
+
+$$x_{i}=a+i\Delta x,~~~~i=0,1,\dots,n-1$$
+$$A_{i}=\frac{\Delta x}{2}((P(x_{i}))^2+(P(x_{i}+ \Delta x))^2),~~~~i=0,1,\dots,n-1$$
+
+Donde $A_{i}$ es sucesion de los volumenes de los trapecios apartir del punto $x_{i}$.  
+
+El volumen total del solido de revolucion es finalmente
+
+$$
+V=\pi \sum_{i=0}^{n-1}A_{i}
+$$
+
+> Nota: se uso dentro de la formula del trapecio $x_{i}+\Delta x$ en lugar de $x_{i+1}$ porque la serie esta definida en principio hasta $n-1$. Esto se escribio asi de forma que reflejara la forma exacta en la que el codigo fue implementado
+
+##### Codigo 
+
+
+###### Polinomio
+```rust
+use std::f64::consts::PI;
+
+// Polinomio aproximador
+fn p(x: f64) -> f64 {
+    4.852272763781776e-11_f64 * x.powi(9)
+    - 2.1769207076913663e-08_f64 * x.powi(8)
+    + 1.76279592469982e-06_f64 * x.powi(7)
+    - 6.344035947156883e-05_f64 * x.powi(6)
+    + 0.0012285008019216523_f64 * x.powi(5)
+    - 0.013329090419386656_f64 * x.powi(4)
+    + 0.074970254828055_f64 * x.powi(3)
+    - 0.15346857576947837_f64 * x.powi(2)
+    + 0.026690674027164477_f64 * x
+    + 1.3909550029629412_f64
+    + - 0.4 // Ajuste por el grosor aproximado de la botella
+}
+```
+
+###### Funcion area trapecio
+```rust
+fn area_trapecio(x1: f64, x2: f64, dx: f64, f: impl Fn(f64) -> f64) -> f64 {
+    dx * (f(x1) + f(x2)) / 2.
+}
+```
+
+
+###### Logica principal
+```rust
+fn main() {
+	// Constantes
+    let a = 0.0;
+    let b = 24.5;
+    let n = 10000;
+    let dx = (b - a) / n as f64;
+
+	// Integración
+    let volumen = (0..n)
+        .map(|i| a + i as f64 * dx)
+        .map(|xi| area_trapecio(xi, xi + dx, dx,|x| p(x).powi(2)))
+        .sum::<f64>() * PI;
+    
+    println!("El volumen del solido de revolucion es aproximadamente {}", volumen);
+}
+```
+
+
+La lógica de este programa se implementó en el lenguaje de programación *Rust* por sus características *funcionales* que vienen de serie. La programacion funcional es un paradigma de programacion donde se evita el uso de ciclos `for` y la modificacion del *estado interno* de un programa. 
+Este estilo de programacion nos permite *mapear* colecciones a colecciones sin necesidad de recorrer cada lista. Lo que da lugar a soluciones que pueden parecer un poco confusas en primer lugar, pero que en realidad son mas elegantes y sencillas.
+
+lo que hace la linea despues de `//Integracion` es en esencia los siguientes mapeos 
 
 
 
 
 
+```tikz
+
+
+\usepackage{tikz-cd}
+\usepackage{graphicx} 
+
+\begin{document}
+\scalebox{1}{
+\begin{tikzcd}
+
+
+i=0,1,...,n-1
+\arrow[d, "a + i \Delta x"] \\
+x_i \arrow[d, "\frac{h}{2}P(x_i)+P(x_{i+1})"] \\
+A_i \arrow[d, "\pi \sum"] \\
+V
+
+
+\end{tikzcd}
+}
+\end{document}
+
+```
+
+
+# Resultados
+
+En primera instancia el volumen aproximado no fue bueno. Alrededor de 511 ml. Se presume que el grosor de la botella es de alrededor de 4 mm por lo que basto con integrar $P(x)-.04$ para llegar a una aaproximaciónmucho mas razonable de 369 mm, mucho mas cerca de los 355 ml mas el volumen de cuello de la botella
+
+
+!![Image Description](https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250427205723.png)
+
+
+----
 
 # Bibliografia
 
 - https://static.sumaysigue.uchile.cl/disponibilizacion_aula360/G3D/U3%20-%20Generaci%C3%B3n%20de%20cuerpos%20utilizando%20patrones%20geom%C3%A9tricos/T2%20-%20Volumen%20de%20cuerpos%20geom%C3%A9tricos_/C1%20-%20Volumen%20y%20Principio%20de%20Cavalieri/Apunte%20Volumen%20y%20Principio%20de%20Cavalieri.pdf
 - Curso_Teoria_Medida.pdf
 - file:///C:/Users/fofoy/Downloads/ENTRETEXTOS-30-L2.pdf
-
+- https://es.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/partial-derivative-and-gradient-articles/a/the-gradient
+- leithold
+- https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/quadratic-approximations/a/the-hessian 
+- https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/optimizing-multivariable-functions/a/second-partial-derivative-test
+-  https://es.wikipedia.org/wiki/Corchete_de_Iverson
+- https://www.cartagena99.com/recursos/alumnos/apuntes/DYCRE_1_T1_MaEm_U4L03.pdf
