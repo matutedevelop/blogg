@@ -775,6 +775,27 @@ lo que hace la linea despues de `//Integracion` es en esencia los siguientes map
 
 
 
+$$
+\usepackage{tikz-cd}
+\usepackage{graphicx} 
+
+\begin{document}
+\scalebox{1}{
+\begin{tikzcd}
+
+
+i=0,1,...,n-1
+\arrow[d, "a + i \Delta x"] \\
+x_i \arrow[d, "\frac{h}{2}P(x_i)+P(x_{i+1})"] \\
+A_i \arrow[d, "\pi \sum"] \\
+V
+
+
+\end{tikzcd}
+}
+\end{document}
+
+$$
 
 ```tikz
 
