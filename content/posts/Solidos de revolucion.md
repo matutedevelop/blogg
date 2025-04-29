@@ -21,7 +21,20 @@ math: true
 showTags: false
 hideBackToTop: false
 ---
+!![Image Description](https://matutedevelop.github.io/blogg/images/Group%201.png)
+%%!![Image Description](https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250427211056.png)%%
 
+---
+
+#### Miembros
+- ##### Juan Pablo Arroyo 
+- ##### Fernando santoyo
+- ##### Aaron becerra
+
+-----
+----
+----
+----
 
 
 
@@ -56,9 +69,69 @@ No obstante las matemáticas no acatarían la noción de volumen hasta la formul
 > - *José C. Sabina de Lis*  
 
 
-Para entender como es que se calcula el volumen de cuerpos tridimensionales con herramientas de cálculo de una variable es importante también entender la aparente de la situación 
+Para entender como es que se calcula el volumen de cuerpos tridimensionales con herramientas de cálculo de una variable es importante también entender la aparente paradoja de la situación. Queremos calcular el volumen de un cuerpo de 3 dimensiones midiendo una superficie de dos dimensiones.  Una pista para entender como es que hacemos esto nos la da *Bonaventura Cavalieri*
+
+#### Principio de Cavalieri
+
+Bonaventura cavalieri propuso una forma de verificar si dos cuerpos geometricos tiene el mismo volumen. Independientemente de que tan compleja pueda ser la forma de las mismas.
+
+!![Image Description](https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250427215232.png)
 
 
+Se realiza un corte transversal los cilindros rectos, de este corte se obtienen *secciones* del cilindro que no son más que una superficie bidimensional. Si el área de ambas secciones es la misma para cada posible corte es la misma entonces ambos cuerpos tienen el mismo volumen.
+
+Partiendo de esta postulado es intuitivo pensar en la siguiente idea. *Dos cuerpos deben de tener el mismo volumen si la suma de las áreas de sus infinitas secciones intersecadas por planos paralelos son iguales.*
+
+!![Image Description](https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250427220609.png)
+
+No obstante rápido llegamos a una idea paradójica. No podemos sumar infinitas superficies para obtener un sólido. Las superficies tienen un grosor nulo y los sólidos no. Es una idea ridícula, es como preguntar la velocidad en un solo instante en el tiempo o intentar sumar líneas verticales para dar lugar a superficies. No hay forma de hacer tal cosa ¿cierto? ... ¿Por qué me ves tan feo Newton? 
+
+!![Image Description](https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250427221646.png)
+
+Es verdad que no podemos sumar líneas para obtener superficies, no podemos sumar superficies para obtener sólidos pero si podemos sumar rectangulos con un ancho muy pequeño, podemos sumar *discos* con una una altura muy pequeña, una altura *infinitesimal*. En eso se basa la idea esencial de la integral definida y el concepto que dio origen al cálculo.
+
+Entonces para 2  cilindros rectos denotados por $\square,\triangle$ delimitados por 2 planos rectos perpendiculares al eje  en el que se desplazan sus contornos. Por simplicidad haremos  que este eje sea el eje $x$. Entonces   podemos definir sus áreas como una *suma de Riemman*
+
+
+$$V_{\triangle}=V_{\square } \iff \lim_{ n \to \infty } \sum_{i}^n A_{\square}(\square_{i})\Delta_{\square}= \lim_{ n \to \infty } \sum_{i}^n A_{\triangle}(\triangle_{i}) \Delta_{\triangle}$$
+
+de donde $\Delta_{\square}=\frac{b_{\square}-a_{\square}}{n},\Delta_{\triangle}=\frac{b_{\triangle}-a_{\triangle}}{n}$
+
+de donde $a,b$ son  puntos en el contorno de $\square,\triangle$ y que estan sobre el eje $x$
+
+$\square_{i}=a_{\square}+i\Delta_{\square},i=0,1,\dots,n$
+$\triangle_{i}=a_{\triangle}+i\Delta_{\triangle},i=0,1,\dots,n$ 
+y donde  $A$ es la función que para cada $x \in[a,b]$ respectivo a cada cilindro nos devuelve el area de la seccion de corte de dicho cilindro.
+
+> Le apuesto una caguama que en su vida habia visto notacion mas horrible una disculpe 
+
+
+De esta forma ya podemos definir el *volumen* de cada posible cilindro recto de manera independiente
+
+
+$$V= \int_{a}^bA(x)~dx$$
+
+Esta es la forma de obtener el volumen de cualquier cilindro recto de forma general. Proyectando su área como una función de una variable e integrando dicha función.
+
+En muchos casos encontrar $A$ va a ser el verdadero reto además sin necesidad de meternos en cuestiones topológicas como conexidad es facil entender que $A$ debe de ser continua en $(a,b)$.
+
+!![Image Description](https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250427232519.png)
+
+
+Por suerte existe una clase especial de cilindros rectos cuya función de área A es conocida. Los sólidos de revolución son una categoría particular de cilindros rectos que se obtienen al girar una curva plana alrededor de un eje.
+
+Si tenemos una función continua f(x) en el intervalo [a,b] y la giramos alrededor del eje x, obtenemos un sólido de revolución cuya función de área A(x) en cada punto x corresponde al área de la sección circular:
+
+$$A(x)=\pi f(x)^2$$
+
+
+Donde $f(x)$ representa la distancia desde el punto de la curva al eje de rotación. En este caso, el volumen del sólido viene dado por:
+
+
+$$V=\pi \int_{a}^b f(x)^2~~dx$$
+
+
+!![Image Description](https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250427232853.png)
 
 # 2 Obteniendo el volumen de la botella
 
@@ -69,6 +142,8 @@ Este paso consiste en obtener la materia prima con la que estaremos trabajando, 
 Estos datos toman la forma de dos sucesiones  $x_{0},x_{1},\dots,x_{n}$ y $y_{0},y_{1},\dots,y_{n}$ de donde $x_{i}$ es el largo de la botella a partir del cuello y   $y_{i}$ es el radio de la botella en $x_{i}$
 
 Apartir de aqui a los puntos $(x_{i},y_{i})$ se les denominara *nodos*
+
+
 
 
 ### 2.1.1 Procedimiento
@@ -106,7 +181,7 @@ Se obtuvieron los siguientes datos.
 
 Graficando se confirma efectivamente  asemejan la silueta de la botella partida a la mitad.
 
-![[Pasted image 20250420131758.png|1000]]
+!![Image Description](https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250427213807.png)
 
 
 ## 2.2 Ajustando curva a los nodos
@@ -402,7 +477,8 @@ poly = sc.interpolate.lagrange(x_i,y_i)
 
 que nos regresa una instancia de la clase `polynomial` que es nuestra función.Graficando el polinomio se tiene el siguiente ajuste.
 
-!![Image Description](https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250423125609.png)
+
+!![Image Description](https://matutedevelop.github.io/blogg/images/Pasted%20image%2020250427213735.png)
 
 
 El ajuste en general no es bueno, y partir de ciertos nodos el polinomio parece que ya no interpola los nodos correspondientes. La hipótesis es que coeficientes del polinomio no pueden ser obtenidos correctamente por el procedimiento previo debido a las limitaciones que tienen las computadoras con las operaciones de punto flotante. Lo que provoca que el polinomio devuelto por la función sea diferente al verdadero polinomio de Lagrange. 
@@ -764,38 +840,17 @@ fn main() {
 
 
 La lógica de este programa se implementó en el lenguaje de programación *Rust* por sus características *funcionales* que vienen de serie. La programacion funcional es un paradigma de programacion donde se evita el uso de ciclos `for` y la modificacion del *estado interno* de un programa. 
-Este estilo de programacion nos permite *mapear* colecciones a colecciones sin necesidad de recorrer cada lista. Lo que da lugar a soluciones que pueden parecer un poco confusas en primer lugar, pero que en realidad son mas elegantes y sencillas.
+Este estilo de programacion nos permite *mapear* colecciones a colecciones sin necesidad de recorrer cada lista. Lo que da lugar a soluciones que pueden parecer un poco confusas en primer lugar, pero que a la larga son mas elegantes y sencillas.
 
-lo que hace la linea despues de `//Integracion` es en esencia los siguientes mapeos 
-
-
+lo que hace la linea despues de `//Integracion` es en esencia los siguientes mapeos de colecciones
 
 
-$$
-\usepackage{tikz-cd}
-\usepackage{graphicx} 
-
-\begin{document}
-\scalebox{1}{
-\begin{tikzcd}
 
 
-i=0,1,...,n-1
-\arrow[d, "a + i \Delta x"] \\
-x_i \arrow[d, "\frac{h}{2}P(x_i)+P(x_{i+1})"] \\
-A_i \arrow[d, "\pi \sum"] \\
-V
 
-
-\end{tikzcd}
-}
-\end{document}
-
-$$
 
 ```tikz
 
-
 \usepackage{tikz-cd}
 \usepackage{graphicx} 
 
@@ -806,8 +861,8 @@ $$
 
 i=0,1,...,n-1
 \arrow[d, "a + i \Delta x"] \\
-x_i \arrow[d, "\frac{h}{2}P(x_i)+P(x_{i+1})"] \\
-A_i \arrow[d, "\pi \sum"] \\
+x_i \arrow[d, "\frac{h}{2}P(x_i)+P(x_{i}+ \Delta x)"] \\
+A_i \arrow[d, "\pi \sum A_i"] \\
 V
 
 
@@ -816,6 +871,7 @@ V
 \end{document}
 
 ```
+
 
 
 # Resultados
@@ -827,15 +883,13 @@ En primera instancia el volumen aproximado no fue bueno. Alrededor de 511 ml. Se
 
 
 ----
+# Referencias Bibliográficas
 
-# Bibliografia
-
-- https://static.sumaysigue.uchile.cl/disponibilizacion_aula360/G3D/U3%20-%20Generaci%C3%B3n%20de%20cuerpos%20utilizando%20patrones%20geom%C3%A9tricos/T2%20-%20Volumen%20de%20cuerpos%20geom%C3%A9tricos_/C1%20-%20Volumen%20y%20Principio%20de%20Cavalieri/Apunte%20Volumen%20y%20Principio%20de%20Cavalieri.pdf
-- Curso_Teoria_Medida.pdf
-- file:///C:/Users/fofoy/Downloads/ENTRETEXTOS-30-L2.pdf
-- https://es.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/partial-derivative-and-gradient-articles/a/the-gradient
-- leithold
-- https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/quadratic-approximations/a/the-hessian 
-- https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/optimizing-multivariable-functions/a/second-partial-derivative-test
--  https://es.wikipedia.org/wiki/Corchete_de_Iverson
-- https://www.cartagena99.com/recursos/alumnos/apuntes/DYCRE_1_T1_MaEm_U4L03.pdf
+1. Universidad de Chile. (s.f.). _Volumen y Principio de Cavalieri_. Recuperado de [https://static.sumaysigue.uchile.cl/disponibilizacion_aula360/G3D/U3%20-%20Generaci%C3%B3n%20de%20cuerpos%20utilizando%20patrones%20geom%C3%A9tricos/T2%20-%20Volumen%20de%20cuerpos%20geom%C3%A9tricos_/C1%20-%20Volumen%20y%20Principio%20de%20Cavalieri/Apunte%20Volumen%20y%20Principio%20de%20Cavalieri.pdf](https://static.sumaysigue.uchile.cl/disponibilizacion_aula360/G3D/U3%20-%20Generaci%C3%B3n%20de%20cuerpos%20utilizando%20patrones%20geom%C3%A9tricos/T2%20-%20Volumen%20de%20cuerpos%20geom%C3%A9tricos_/C1%20-%20Volumen%20y%20Principio%20de%20Cavalieri/Apunte%20Volumen%20y%20Principio%20de%20Cavalieri.pdf)
+2. Medina, J. C. (s.f.). _Curso Teoría Medida_.
+3. Khan Academy. (s.f.). _El gradiente_. Recuperado de [https://es.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/partial-derivative-and-gradient-articles/a/the-gradient](https://es.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/partial-derivative-and-gradient-articles/a/the-gradient)
+4. Leithold, L. (s.f.). _El Cálculo_.
+5. Khan Academy. (s.f.). _La matriz hessiana_. Recuperado de [https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/quadratic-approximations/a/the-hessian](https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/quadratic-approximations/a/the-hessian)
+6. Khan Academy. (s.f.). _Test de la segunda derivada parcial_. Recuperado de [https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/optimizing-multivariable-functions/a/second-partial-derivative-test](https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/optimizing-multivariable-functions/a/second-partial-derivative-test)
+7. Wikipedia. (s.f.). _Corchete de Iverson_. Recuperado de [https://es.wikipedia.org/wiki/Corchete_de_Iverson](https://es.wikipedia.org/wiki/Corchete_de_Iverson)
+8. (s.f.). _Aplicaciones del cálculo diferencial_. Recuperado de [https://www.cartagena99.com/recursos/alumnos/apuntes/DYCRE_1_T1_MaEm_U4L03.pdf](https://www.cartagena99.com/recursos/alumnos/apuntes/DYCRE_1_T1_MaEm_U4L03.pdf)
